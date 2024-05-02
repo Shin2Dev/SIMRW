@@ -79,11 +79,19 @@
 
         <!-- ========================= main ge deleh isine ==================== -->
         <div class="main">
+<<<<<<< Updated upstream
             @yield('main')
         </div>
 
 
     </div>
+=======
+                @yield('main')
+        </div>
+
+
+        </div>
+>>>>>>> Stashed changes
     </div>
 
     <!-- =========== js =========  -->
