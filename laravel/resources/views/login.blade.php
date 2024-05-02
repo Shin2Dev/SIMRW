@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/login.css">
-    <title>hehe</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <h1>Selamat Datang</h1>
         <div class="divider">
             <div class="line"></div>
-            <p>pp</p>
+            <p>SIMRW</p>
             <div class="line"></div>
         </div>
 
