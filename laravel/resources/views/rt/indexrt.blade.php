@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sirw</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -15,26 +21,36 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="{{ url('/dashboard') }}">
+                    <a href="{{ url('/dashboardrt') }}" style="left: -8px;">
                         <h2 class="title" style="text-align: center;">SIRW</h2>
                     </a>
                 </li>
 
+                <hr style="width: 3200px">
                 <li>
-                    <a href="{{ url('/dashboard') }}">
+                    <a href="{{ url('/dashboardrt') }}">
                         <span class="icon">
-                            <img src="assets/imgs/dashicon2.png" alt="" style="margin-bottom: 3px">
+                            <ion-icon name="grid"></ion-icon>
                         </span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ url('/datawarga') }}">
+                    <a href="{{ url('/datawargart') }}">
                         <span class="icon">
-                            <img src="assets/imgs/datawargaicon.png" alt="" style="margin-bottom: 2px">
+                            <ion-icon name="people-circle-outline"></ion-icon>
                         </span>
                         <span class="title">Data Warga</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url('/surat') }}">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="title">Surat</span>
                     </a>
                 </li>
 
@@ -50,7 +66,7 @@
                 <li>
                     <a href="{{ url('/keuangan') }}">
                         <span class="icon">
-                            <img src="assets/imgs/keuanganicon.png" alt="" style="margin-bottom: 3px">
+                            <ion-icon name="logo-usd"></ion-icon>
                         </span>
                         <span class="title">Keuangan</span>
                     </a>
@@ -59,7 +75,7 @@
                 <li>
                     <a href="{{ url('/info') }}">
                         <span class="icon">
-                            <img src="assets/imgs/infoicon.png" alt="" style="margin-bottom: 3px">
+                            <ion-icon name="list"></ion-icon>
                         </span>
                         <span class="title">Informasi Kegiatan</span>
                     </a>
@@ -79,19 +95,11 @@
 
         <!-- ========================= main ge deleh isine ==================== -->
         <div class="main">
-<<<<<<< Updated upstream
             @yield('main')
         </div>
 
 
     </div>
-=======
-                @yield('main')
-        </div>
-
-
-        </div>
->>>>>>> Stashed changes
     </div>
 
     <!-- =========== js =========  -->
@@ -104,6 +112,11 @@
     <!-- ====== link icon online ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Icons -->
+    <script>
+        feather.replace();
+    </script>
 </body>
 
 </html>
