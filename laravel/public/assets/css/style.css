@@ -687,7 +687,6 @@ font-size: 0.9rem;
         border-radius: 6px;
         text-decoration: none;
     }
-
 .table__body1 .card img{
     margin-top: 8px;
     width: 140px;
@@ -1201,7 +1200,6 @@ form{
     font-weight: 500;
     position: relative;
   }
-
   .container2 .title::before{
     content: "";
     position: absolute;
@@ -1212,7 +1210,6 @@ form{
     border-radius: 5px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
-
   .content form{
     position: relative;
     left: 20px;
@@ -1224,18 +1221,15 @@ form{
     justify-content: space-between;
     margin: 20px 0 12px 0;
   }
-
   .content .user-details .input-box{
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
   }
-
   .content .input-box span.details{
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
   }
-
   .user-details .input-box input{
     height: 45px;
     width: 100%;
@@ -1247,17 +1241,14 @@ form{
     border-bottom-width: 2px;
     transition: all 0.3s ease;
   }
-
   .user-details .input-box input:focus,
   .user-details .input-box input:valid{
     border-color: #9b59b6;
   }
-
    .content form .gender-details .gender-title{
     font-size: 20px;
     font-weight: 500;
    }
-
    .content form .category{
      display: flex;
      width: 80%;
@@ -1296,7 +1287,6 @@ form{
      height: 45px;
      margin: 35px 0
    }
-
    .content form .button input{
      height: 100%;
      width: 100%;
@@ -1310,17 +1300,14 @@ form{
      transition: all 0.3s ease;
      background: linear-gradient(135deg, #71b7e6, #9b59b6);
    }
-
    .content form .button input:hover{
     /* transform: scale(0.99); */
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
     }
-
    @media(max-width: 584px){
    .container2{
     max-width: 100%;
   }
-
   .content form .user-details .input-box{
       margin-bottom: 15px;
       width: 100%;
@@ -1334,7 +1321,6 @@ form{
       max-height: 300px;
       overflow-y: scroll;
     }
-
     .user-details::-webkit-scrollbar{
       width: 5px;
     }
@@ -1356,7 +1342,6 @@ form{
     left: 40px;
     top: 80px;
 }
-
 .cardinfo .jud{
 display: inline-block;
 margin-right: 12px;
@@ -1407,7 +1392,6 @@ font-size: 0.9rem;
     left: 650px;
     top: -108px;
 }
-
 .cardinfo2 .jud{
 display: inline-block;
 margin-right: 12px;
@@ -1458,7 +1442,6 @@ font-size: 0.9rem;
     left: 40px;
     top: -30px;
 }
-
 .cardinfo3 .jud{
 display: inline-block;
 margin-right: 12px;
@@ -1509,7 +1492,6 @@ font-size: 0.9rem;
     left: 650px;
     top: -218px;
 }
-
 .cardinfo4 .jud{
 display: inline-block;
 margin-right: 12px;
@@ -1608,7 +1590,6 @@ font-size: 0.9rem;
 .modal3 .modal-container3 .modal-content3 .product-content3 .product-star .star-full{
     fill: var(--primary);
 }
-
 .modal3 .modal-container3 .modal-content3 .product-content3 .product-price{
     font-size: 1.3rem;
     font-weight: bold;

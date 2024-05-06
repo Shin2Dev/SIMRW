@@ -33,4 +33,3 @@ Route::get('/register', function () {
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboardrt', 'PagesControllerRT@dashboardrt')->name('pages.dashboardrt');
 });
-
