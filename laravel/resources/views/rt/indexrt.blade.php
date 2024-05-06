@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!-- =============== nafigasi ================ -->
+    <!-- =============== navigasi ================ -->
     <div class="container">
         <div class="navigation">
             <ul>
@@ -93,7 +93,7 @@
             </ul>
         </div>
 
-        <!-- ========================= main ge deleh isine ==================== -->
+        <!-- ========================= main ==================== -->
         <div class="main">
             @yield('main')
         </div>
