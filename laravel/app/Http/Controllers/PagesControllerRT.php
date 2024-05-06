@@ -19,4 +19,11 @@ class PagesControllerRT extends Controller
             "title" => "Dashboard"
         ]);
     }
+
+    public function landing()
+    {
+        return view('landing', [
+            "title" => "landing"
+        ]);
+    }
 }
