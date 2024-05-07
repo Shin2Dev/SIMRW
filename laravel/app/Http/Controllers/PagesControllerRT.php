@@ -40,4 +40,18 @@ class PagesControllerRT extends Controller
             "title" => "detailsurat"
         ]);
     }
+
+    public function keuangan()
+    {
+        return view('rt.keuangan', [
+            "title" => "keuangan"
+        ]);
+    }
+    
+    public function tambahuang()
+    {
+        return view('rt.tambahuang', [
+            "title" => "tambahuang"
+        ]);
+    }
 }
