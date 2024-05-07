@@ -38,5 +38,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboardrt', 'PagesControllerRT@dashboardrt')->name('pages.dashboardrt');
     Route::get('/surat', 'PagesControllerRT@surat')->name('pages.surat');
     Route::get('/detailsurat', 'PagesControllerRT@detailsurat')->name('pages.detailsurat');
+    Route::get('/keuangan', 'PagesControllerRT@keuangan')->name('pages.keuangan');
+    Route::get('/tambahuang', 'PagesControllerRT@tambahuang')->name('pages.tambahuang');
 });
 
