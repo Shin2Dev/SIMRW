@@ -26,4 +26,18 @@ class PagesControllerRT extends Controller
             "title" => "landing"
         ]);
     }
+
+    public function surat()
+    {
+        return view('rt.surat', [
+            "title" => "surat"
+        ]);
+    }
+    
+    public function detailsurat()
+    {
+        return view('rt.detailsurat', [
+            "title" => "detailsurat"
+        ]);
+    }
 }
