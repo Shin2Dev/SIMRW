@@ -35,7 +35,7 @@
             </a>
             <div class="links">
                 <a href="#">Lupa Password</a>
-                <a href="/register">Belum Memiliki Akun?</a>
+                <a href="{{ url('/register') }}">Belum Memiliki Akun?</a>
             </div>
         </form>
 
