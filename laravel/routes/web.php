@@ -40,5 +40,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/detailsurat', 'PagesControllerRT@detailsurat')->name('pages.detailsurat');
     Route::get('/keuangan', 'PagesControllerRT@keuangan')->name('pages.keuangan');
     Route::get('/tambahuang', 'PagesControllerRT@tambahuang')->name('pages.tambahuang');
+    Route::get('/info', 'PagesControllerRT@info')->name('pages.info');
+    Route::get('/tambahinfo', 'PagesControllerRT@tambahinfo')->name('pages.tambahinfo');
 });
-

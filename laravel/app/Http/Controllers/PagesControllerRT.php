@@ -33,7 +33,7 @@ class PagesControllerRT extends Controller
             "title" => "surat"
         ]);
     }
-    
+
     public function detailsurat()
     {
         return view('rt.detailsurat', [
@@ -47,11 +47,25 @@ class PagesControllerRT extends Controller
             "title" => "keuangan"
         ]);
     }
-    
+
     public function tambahuang()
     {
         return view('rt.tambahuang', [
             "title" => "tambahuang"
+        ]);
+    }
+
+    public function info()
+    {
+        return view('rt.info', [
+            "title" => "info"
+        ]);
+    }
+
+    public function tambahinfo()
+    {
+        return view('rt.tambahinfo', [
+            "title" => "tambahinfo"
         ]);
     }
 }
