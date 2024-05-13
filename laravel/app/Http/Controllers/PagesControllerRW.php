@@ -19,4 +19,11 @@ class PagesControllerRW extends Controller
             "title" => "Dashboard"
         ]);
     }
+
+    public function keuanganrw()
+    {
+        return view('rw.keuanganrw', [
+            "title" => "keuangan"
+        ]);
+    }
 }

@@ -50,4 +50,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboard', 'PagesControllerRW@dashboard')->name('pages.dashboard');
+    Route::get('/keuanganrw', 'PagesControllerRW@keuanganrw')->name('pages.keuanganrw');
 });

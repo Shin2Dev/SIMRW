@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirw</title>
+    <title>RW</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
@@ -16,13 +16,13 @@
 </head>
 
 <body>
-    <!-- =============== nafigasi ================ -->
+    <!-- =============== navigasi ================ -->
     <div class="container">
         <div class="navigation">
             <ul>
                 <li>
                     <a href="{{ url('/dashboard') }}">
-                        <h2 class="title" style="text-align: center;">SIRW</h2>
+                        <h2 class="title" style="text-align: center;">SIMRW</h2>
                     </a>
                 </li>
                 <hr style="width: 3200px">
@@ -84,7 +84,7 @@
             </ul>
         </div>
 
-        <!-- ========================= main ge deleh isine ==================== -->
+        <!-- ========================= main ==================== -->
         <div class="main">
             @yield('main')
         </div>
