@@ -47,3 +47,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboardw', 'PagesControllerW@dashboard')->name('pages.dashboardw');
 });
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/dashboard', 'PagesControllerRW@dashboard')->name('pages.dashboard');
+});
