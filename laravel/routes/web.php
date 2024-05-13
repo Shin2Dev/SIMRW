@@ -43,3 +43,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/info', 'PagesControllerRT@info')->name('pages.info');
     Route::get('/tambahinfo', 'PagesControllerRT@tambahinfo')->name('pages.tambahinfo');
 });
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/dashboardw', 'PagesControllerW@dashboard')->name('pages.dashboardw');
+});
