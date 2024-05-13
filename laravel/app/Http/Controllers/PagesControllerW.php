@@ -22,4 +22,11 @@ class PagesControllerW extends Controller
             "title" => "Dashboard"
         ]);
     }
+
+    public function keuanganw()
+    {
+        return view('warga.keuanganw', [
+            "title" => "keuanganw"
+        ]);
+    }
 }
