@@ -29,4 +29,11 @@ class PagesControllerW extends Controller
             "title" => "keuanganw"
         ]);
     }
+
+    public function infow()
+    {
+        return view('warga.infow', [
+            "title" => "infow"
+        ]);
+    }
 }
