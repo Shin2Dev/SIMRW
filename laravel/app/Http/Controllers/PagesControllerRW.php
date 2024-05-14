@@ -26,4 +26,11 @@ class PagesControllerRW extends Controller
             "title" => "keuangan"
         ]);
     }
+
+    public function inforw()
+    {
+        return view('rw.inforw', [
+            "title" => "inforw"
+        ]);
+    }
 }
