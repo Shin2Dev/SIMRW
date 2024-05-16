@@ -39,7 +39,7 @@
             </div>
             <button class="login">Register</button>
             <div class="links">
-                <a href="/login">Sudah Memiliki Akun?</a>
+                <a href="{{ url('/login') }}">Sudah Memiliki Akun?</a>
             </div>
         </form>
 
