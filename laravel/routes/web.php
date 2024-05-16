@@ -30,10 +30,6 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/landing', function () {
-    return view('landing');
-});
-
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboardrt', 'PagesControllerRT@dashboardrt')->name('pages.dashboardrt');
     Route::get('/surat', 'PagesControllerRT@surat')->name('pages.surat');
