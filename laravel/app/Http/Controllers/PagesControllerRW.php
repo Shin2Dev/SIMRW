@@ -33,4 +33,11 @@ class PagesControllerRW extends Controller
             "title" => "inforw"
         ]);
     }
+
+    public function datawargarw()
+    {
+        return view('rw.datawargarw', [
+            "title" => "datawargarw"
+        ]);
+    }
 }
