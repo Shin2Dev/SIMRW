@@ -33,7 +33,7 @@ class PagesControllerW extends Controller
     public function infow()
     {
         return view('warga.infow', [
-            "title" => "infow"
+            "title" => "info"
         ]);
     }
 }

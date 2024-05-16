@@ -50,7 +50,7 @@
     </div>
 
     <div class="cardinfo3">
-        <div class="jud">Kegiatan Olahraga dan Kesehatan
+        <div class="jud">Kegiatan Olahraga & Kesehatan
             <img src="assets/imgs/cardd.png" alt="">
         </div>
 
