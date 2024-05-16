@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', function () {
-    return view('index');
+    return view('landing');
 });
 
 Route::get('/login', function () {
@@ -41,4 +41,3 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/keuangan', 'PagesControllerRT@keuangan')->name('pages.keuangan');
     Route::get('/tambahuang', 'PagesControllerRT@tambahuang')->name('pages.tambahuang');
 });
-
