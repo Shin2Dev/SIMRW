@@ -47,9 +47,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboardw', 'PagesControllerW@dashboard')->name('pages.dashboardw');
     Route::get('/keuanganrw', 'PagesControllerRW@keuanganrw')->name('pages.keuanganrw');
+    Route::get('/inforw', 'PagesControllerRW@inforw')->name('pages.inforw');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboard', 'PagesControllerRW@dashboard')->name('pages.dashboard');
     Route::get('/keuanganw', 'PagesControllerW@keuanganw')->name('pages.keuanganw');
+    Route::get('/infow', 'PagesControllerW@infow')->name('pages.infow');
 });
