@@ -36,4 +36,32 @@ class PagesControllerW extends Controller
             "title" => "info"
         ]);
     }
+
+    public function suratw()
+    {
+        return view('warga.suratw', [
+            "title" => "surat"
+        ]);
+    }
+
+    public function ajukansurat()
+    {
+        return view('warga.ajukansurat', [
+            "title" => "ajukansurat"
+        ]);
+    }
+
+    public function ajukansurat2()
+    {
+        return view('warga.ajukansurat2', [
+            "title" => "ajukansurat"
+        ]);
+    }
+    
+    public function detailsuratw()
+    {
+        return view('warga.detailsuratw', [
+            "title" => "detailsurat"
+        ]);
+    }
 }

@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="button">
-                    <a href="{{ url('/surat') }}" class="butt2">Kembali</a>
+                    <a href="{{ url('/suratw') }}" class="butt2">Kembali</a>
                 </div>
             </form>
         </div>
