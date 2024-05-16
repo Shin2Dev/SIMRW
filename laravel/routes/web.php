@@ -45,3 +45,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/keuanganrw', 'PagesControllerRW@keuanganrw')->name('pages.keuanganrw');
     Route::get('/inforw', 'PagesControllerRW@inforw')->name('pages.inforw');
 });
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/dashboard', 'PagesControllerRW@dashboard')->name('pages.dashboard');
+    Route::get('/keuanganw', 'PagesControllerW@keuanganw')->name('pages.keuanganw');
+    Route::get('/suratw', 'PagesControllerW@suratw')->name('pages.suratw');
+    Route::get('/ajukansurat', 'PagesControllerW@ajukansurat')->name('pages.ajukansurat');
+    Route::get('/ajukansurat2', 'PagesControllerW@ajukansurat2')->name('pages.ajukansurat2');
+    Route::get('/detailsuratw', 'PagesControllerW@detailsuratw')->name('pages.detailsuratw');
+});
