@@ -54,4 +54,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/ajukansurat', 'PagesControllerW@ajukansurat')->name('pages.ajukansurat');
     Route::get('/ajukansurat2', 'PagesControllerW@ajukansurat2')->name('pages.ajukansurat2');
     Route::get('/detailsuratw', 'PagesControllerW@detailsuratw')->name('pages.detailsuratw');
+    Route::get('/datawargaw', 'PagesControllerW@datawargaw')->name('pages.datawargaw');
 });
