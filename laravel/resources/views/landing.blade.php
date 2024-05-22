@@ -16,14 +16,14 @@
         <div class="links">
         </div>
 
-        <div class="login">
+        {{-- <div class="login">
             <a href="{{ url('/login') }}">
                 <button class="signup">Login</button>
             </a>
             <a href="{{ url('/register') }}">
                 <button>Daftar</button>
             </a>
-        </div>
+        </div> --}}
 
     </nav>
 
