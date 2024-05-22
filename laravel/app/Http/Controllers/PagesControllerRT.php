@@ -68,4 +68,39 @@ class PagesControllerRT extends Controller
             "title" => "tambahinfo"
         ]);
     }
+
+    public function datawargart()
+    {
+        return view('rt.datawargart', [
+            "title" => "datawargart"
+        ]);
+    }
+
+    public function tambahwarga()
+    {
+        return view('rt.tambahwarga', [
+            "title" => "tambahwarga"
+        ]);
+    }
+
+    public function editwarga()
+    {
+        return view('rt.editwarga', [
+            "title" => "editwarga"
+        ]);
+    }
+
+    public function gantistatus()
+    {
+        return view('rt.gantistatus', [
+            "title" => "gantistatus"
+        ]);
+    }
+
+    public function detailstatus()
+    {
+        return view('rt.detailstatus', [
+            "title" => "detailstatus"
+        ]);
+    }
 }

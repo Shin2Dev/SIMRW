@@ -265,6 +265,22 @@ body {
   color: var(--white);
 }
 
+/*DETAIL STATUS */
+
+.main2 {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main2.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+
 /* ================== Charts JS ============== */
 .chartsBx{
   position: relative;
@@ -1436,3 +1452,5 @@ li{
     background-color: rgb(150, 21, 21);
     color: rgb(255, 255, 255);
   }
+
+

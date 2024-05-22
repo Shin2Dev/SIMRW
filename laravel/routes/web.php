@@ -38,6 +38,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/tambahuang', 'PagesControllerRT@tambahuang')->name('pages.tambahuang');
     Route::get('/info', 'PagesControllerRT@info')->name('pages.info');
     Route::get('/tambahinfo', 'PagesControllerRT@tambahinfo')->name('pages.tambahinfo');
+    Route::get('/datawargart', 'PagesControllerRT@datawargart')->name('pages.datawargart');
+    Route::get('/tambahwarga', 'PagesControllerRT@tambahwarga')->name('pages.tambahwarga');
+    Route::get('/editwarga', 'PagesControllerRT@editwarga')->name('pages.editwarga');
+    Route::get('/gantistatus', 'PagesControllerRT@gantistatus')->name('pages.gantistatus');
+    Route::get('/detailstatus', 'PagesControllerRT@detailstatus')->name('pages.detailstatus');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
