@@ -12,6 +12,10 @@
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <base href="/SIMRW/laravel/public/">
+    <link rel="stylesheet" href="assets/css/templates/root.css">
+    <link rel="stylesheet" href="assets/css/templates/sidebar.css">
+    <link rel="stylesheet" href="assets/css/templates/header.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 

@@ -17,33 +17,43 @@
             <p>Ganti Status</p>
         </div>
         <div class="content">
-            <form action="#">
-                <div class="user-details">
+            <form action="{{ route('pages.gantistatuswarga', ['id' => $warga -> id]) }}" method="POST">
+                @csrf
+
+                <div class="input-box2">
+                    <span class="details">Yakin ingin mengganti status keaktifan warga ini?</span>
+                    <input type="hidden" name="status_warga" value="0">
+                </div>
+
+
+                {{-- <div class="user-details">
                     <div class="input-box2">
+                        <input type="hidden" name="id_warga" value="{{ $warga -> id }}">
                         <span class="details">Status</span>
                         <div class="custom-select">
-                            <select>
-                                <option value="0">Pilih Status Warga:</option>
-                                <option value="1">Meninggal</option>
-                                <option value="2">Pindah</option>
-                                <option value="3">Hilang</option>
+                            <select name="status">
+                                <option value="0">Pilih status warga:</option>
+                                <option value="Meninggal">Meninggal</option>
+                                <option value="Pindah">Pindah</option>
+                                <option value="Hilang">Hilang</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="input-box2">
                         <span class="details">Tanggal Lapor</span>
-                        <input type="date" placeholder="" required>
+                        <input type="date" placeholder="" required name="tanggal_lapor">
                     </div>
                     <div class="input-box2">
                         <span class="details">Catatan Peristiwa</span>
-                        <input type="text" style="height: 180px;" placeholder="" required>
+                        <input type="text" style="height: 180px;" placeholder="" required name="peristiwa">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="button">
-                    <button class="tom1" type="submit">Back</button>
-                    <button class="tom2" type="submit">Submit</button>
+                    <button class="tom1" type="submit">Iya</button>
+                    <a class="tom2" href="{{ url('/datawargart') }}" style="padding: 15px 30px; text-decoration: none;">Kembali</a>
+                </div>
             </form>
         </div>
     </div>

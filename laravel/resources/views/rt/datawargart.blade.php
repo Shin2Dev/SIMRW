@@ -16,8 +16,7 @@
     <main class="table" id="customers_table">
         <section class="table__header">
             <h1>Daftar Warga</h1>
-            <h3><a href="{{ url('/tambahwarga') }}" class="aksi32">+ Tambah</a> </h3>
-            <h3><a href="{{ url('/editwarga') }}" class="aksi33">Edit</a></h3>
+            <h3><a href="{{ url('/tambahwarga') }}" class="aksi33" style="background-color: blue">+ Tambah</a></h3>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <img src="assets/imgs/search.png" alt="">
@@ -30,9 +29,9 @@
                         <th> No </th>
                         <th> Nama Lengkap </th>
                         <th> NIK </th>
-                        <th> Tempat Tgl Lahir </th>
+                        <th> Tempat Lahir </th>
+                        <th> Tanggal Lahir </th>
                         <th> Jenis Kelamin </th>
-                        <th> Agama </th>
                         <th> Alamat </th>
                         <th> No.HP </th>
                         <th> Kawin </th>
@@ -41,51 +40,27 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    {{-- BACKEND --}}
+                    @foreach ($warga as $war)
                     <tr>
-                        <td> 1 </td>
-                        <td> hendra springbed </td>
-                        <td> 000000000 </td>
-                        <td> 17 Dec 2022 </td>
-                        <td> lanang </td>
-                        <td> random </td>
-                        <td> ngawi </td>
-                        <td> 888888888 </td>
-                        <td> Belum kawin </td>
-                        <td> Pindah </td>
-                        <td> <a href="{{ url('/gantistatus') }}" class="aksi34">Ganti</a>
-                            <div class="aks"><a href="{{ url('/detailstatus') }}" class="aksidet">Detail</a></div>
+                        <td>{{ $war -> id }}</td>
+                        <td>{{ $war -> nama }}</td>
+                        <td>{{ $war -> nik }}</td>
+                        <td>{{ $war -> tempat_lahir }}</td>
+                        <td>{{ $war -> tanggal_lahir }}</td>
+                        <td>{{ $war -> jenis_kelamin }}</td>
+                        <td>{{ $war -> alamat }}</td>
+                        <td>{{ $war -> no_hp }}</td>
+                        <td>{{ $war -> status_kawin = $war -> status_kawin == true ? "Sudah Menikah" : "Belum Menikah"  }}</td>
+                        <td>{{ $war -> status_warga = $war -> status_warga == true ? "Aktif" : "Tidak Aktif"}}</td>
+                        <td> 
+                            <a href="{{ url('/gantistatus/' . $war -> id) }}" class="aksi34">Ganti</a>
+                            <div class="aks"><a href="{{ url('/editwarga/' . $war -> id) }}" class="aksidet" style="background-color: orange; z-index: 0">Edit</a></div>
+                            <div class="aks"><a href="{{ url('/detailstatus/' . $war -> id) }}" class="aksidet" style="z-index: 0">Detail</a></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> hendra springbed </td>
-                        <td> 000000000 </td>
-                        <td> 17 Dec 2022 </td>
-                        <td> lanang </td>
-                        <td> random </td>
-                        <td> ngawi </td>
-                        <td> 888888888 </td>
-                        <td> Belum kawin </td>
-                        <td> Pindah </td>
-                        <td><a href="{{ url('/gantistatus') }}" class="aksi34">Ganti</a>
-                            <div class="aks"><a href="{{ url('/detailstatus') }}" class="aksidet">Detail</a></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 3 </td>
-                        <td> hendra springbed </td>
-                        <td> 000000000 </td>
-                        <td> 17 Dec 2022 </td>
-                        <td> lanang </td>
-                        <td> random </td>
-                        <td> ngawi </td>
-                        <td> 888888888 </td>
-                        <td> Belum kawin </td>
-                        <td> Pindah </td>
-                        <td><a href="{{ url('/gantistatus') }}" class="aksi34">Ganti</a>
-                            <div class="aks"><a href="{{ url('/detailstatus') }}" class="aksidet">Detail</a></div>
-                        </td>
-                    </tr>
+                    @endforeach
 
                 </tbody>
             </table>
