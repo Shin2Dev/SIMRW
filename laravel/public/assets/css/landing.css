@@ -176,36 +176,38 @@ img
         display: inline-block;
         margin-top: 30px;
     }
-#divider
+#feature
     {
         text-align: center;
         padding-top: 80px;
         padding-bottom: 80px;
     }
-#divider .fa
+#feature .fa
     {
         color: #B0C4DE;
         font-size: 60px;
     }
-#divider h3
+#feature h3
     {
         font-size: 20px;
     }
-#feature /*   fitur halaman pertama    */
+
+/*   fitur halaman pertama    */   
+#aboutus    
     {
         background: #B0C4DE;
         padding-top: 80px;
         padding-bottom: 80px;
     }
-#feature p
+#aboutus p
     {
         padding-top: 10px;
     }
-#feature span
+#aboutus span
     {
         float: left;
     }
-#feature .fa
+#aboutus .fa
     {
         background: #4682B4;
         border-radius: 50%;
@@ -217,7 +219,8 @@ img
         text-align: center;
         margin-right: 20px;
     }
-#feature1 /* fitur halaman kedua */
+
+/*#feature1 fitur halaman kedua 
     {
         padding-top: 60px;
         padding-bottom: 60px;
@@ -230,7 +233,7 @@ img
     {
         float: left;
     }
-#feature1 .fa /* warna halaman nomor kedua */
+#feature1 .fa 
     {
         background: #B0C4DE;
         border-radius: 50%;
@@ -241,29 +244,30 @@ img
         line-height: 40px;
         text-align: center;
         margin-right: 20px;
-    }
-#pricing
+    } */
+#informasi
     {
         background: #f8f8f8;
         text-align: center;
         padding-top: 80px;
         padding-bottom: 80px;
     }
-#pricing h2
+#informasi h2
     {
         padding-bottom: 60px;
+
     }
-#pricing .pricing
+#informasi .pricing
     {
         background: #fff;
         border-radius: 5px;
     }
-#pricing .active
+#informasi .active
     {
         position: relative;
         bottom: 20px;
     }
-#pricing .pricing .pricing-title
+#informasi .pricing .pricing-title
     {
         background: #B0C4DE;
         color: #fff;
@@ -271,22 +275,27 @@ img
         padding: 30px;
         border-radius: 5px  5px 0 0;
     }
-#pricing .pricing .pricing-title p
+#informasi .pricing .pricing-title p
     {
         font-size: 20px;
     }
-#pricing .pricing ul
+#informasi .pricing ul
     {
         padding: 0;
         margin: 0;
     }
-#pricing .pricing ul li
+#informasi .pricing ul li
     {
         display: block;
         list-style: none;
-        padding: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        text-align: left;
+        text-transform: none;
     }
-#pricing .pricing .btn
+#informasi .pricing .btn
     {
         background: transparent;
         border: 1px solid #B0C4DE;
@@ -299,29 +308,43 @@ img
         margin-bottom: 30px;
         transition: all 0.3s ease;
     }
-#pricing .pricing .btn:hover {
+#informasi .pricing .btn:hover {
     background: #B0C4DE;
     color: #fff;
 }
-#download
+#informasi .pricing-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+#informasi img {
+    max-width: 20%;
+    height: auto;
+    margin-top: 30px;
+}
+
+#login
     {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-#download h2
+#login h2
     {
         padding-bottom: 20px;
     }
-#download .btn
+#login .btn
     {
-        border-radius: 0px;
+        border-radius: 20px;
         font-weight: bold;
         margin-top: 20px;
         padding: 10px 40px 10px 40px;
     }
 #contact
     {
-        background: url('../img/contact-bg.jpeg') no-repeat;
+        background: url('../imgs/background2.jpeg') no-repeat;
         background-size: cover;
         color: #fff;
     }
@@ -450,3 +473,4 @@ footer
 .jumbotron .display-4 span {
     font-weight: 500;
 }
+
