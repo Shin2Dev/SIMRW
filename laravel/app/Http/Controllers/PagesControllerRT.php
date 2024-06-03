@@ -70,6 +70,26 @@ class PagesControllerRT extends Controller
         ]);
     }
 
+    public function bantuansosial()
+    {
+        return view('rt.bantuansosial', [
+            "title" => "bantuansosial"
+        ]);
+    }
+
+    public function ajukanbansos()
+    {
+        return view('rt.ajukanbansos', [
+            "title" => "ajukanbansos"
+        ]);
+    }
+    public function editbantuansosial()
+    {
+        return view('rt.editbantuansosial', [
+            "title" => "editbantuansosial"
+        ]);
+    }
+
     // DATA WARGA
     public function datawargart()
     {
@@ -90,7 +110,7 @@ class PagesControllerRT extends Controller
     public function tambah(Request $request)
     {
         // Validasi data yang diterima
-        $validatedData = $request -> validate([
+        $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
             'nik' => 'required|string|max:16',
             'alamat' => 'required|string|max:255',
@@ -152,9 +172,9 @@ class PagesControllerRT extends Controller
 
     public function ganti(Request $request, $id)
     {
-        $warga = WargaModel::findOrFail($id);        
+        $warga = WargaModel::findOrFail($id);
         // Validasi data yang diterima
-        $validatedData = $request -> validate([
+        $validatedData = $request->validate([
             'status_warga' => 'required|boolean'
         ]);
 

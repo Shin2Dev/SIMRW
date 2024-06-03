@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\BansosController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\KeuanganController;
@@ -40,14 +41,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/tambahuang', 'PagesControllerRT@tambahuang')->name('pages.tambahuang');
     Route::get('/info', 'PagesControllerRT@info')->name('pages.info');
     Route::get('/tambahinfo', 'PagesControllerRT@tambahinfo')->name('pages.tambahinfo');
-    
+    Route::get('/bantuansosial', 'PagesControllerRT@bantuansosial')->name('pages.bantuansosial');
+    Route::get('/ajukanbansos', 'PagesControllerRT@ajukanbansos')->name('pages.ajukanbansos');
+    Route::get('/editbantuansosial', 'PagesControllerRT@editbantuansosial')->name('pages.editbantuansosial');
+
     // DATA WARGA
     Route::get('/datawargart', 'PagesControllerRT@datawargart')->name('pages.datawargart');
 
     // TAMPILAN EDIT
     Route::get('/editwarga/{id}', 'PagesControllerRT@editwarga')->name('pages.editwarga');
     Route::get('/detailstatus/{id}', 'PagesControllerRT@detailstatus')->name('pages.detailstatus');
-    
+
     // UPDATE DATA EDIT
     Route::put('/editwarga/{id}', 'PagesControllerRT@update')->name('pages.updatewarga');
 
@@ -65,7 +69,7 @@ Route::post('/login', [LoginController::class, 'autentikasi']);
 
 
 // RT Controller (PAGES)
-Route::controller(RukunTetangga::class) -> group(function () {
+Route::controller(RukunTetangga::class)->group(function () {
     Route::get('/dashboard_rt', 'index')->name('dashboard_rt');
     Route::get('/surat_rt', 'surat')->name('surat_rt');
     Route::get('/keuangan_rt', 'keuangan')->name('keuangan_rt');
@@ -81,16 +85,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 });
 
 // Warga Controller (PAGES)
-Route::controller(Warga::class) -> group(function () {
-    Route::get('/dashboard_warga', 'index') -> name('dashboard_warga');
+Route::controller(Warga::class)->group(function () {
+    Route::get('/dashboard_warga', 'index')->name('dashboard_warga');
     Route::get('/datadiri_warga', 'datadiri')->name('datadiri_warga');
-    Route::get('/surat_warga', 'surat') -> name('surat_warga');
-    Route::get('/keuangan_warga', 'keuangan') -> name('keuangan_warga');
-    Route::get('/info_warga', 'info') -> name('informasi_warga');
+    Route::get('/surat_warga', 'surat')->name('surat_warga');
+    Route::get('/keuangan_warga', 'keuangan')->name('keuangan_warga');
+    Route::get('/info_warga', 'info')->name('informasi_warga');
 });
 
 // FORM SURAT
-Route::controller(SuratController::class) -> group(function(){
+Route::controller(SuratController::class)->group(function () {
     Route::get('/ajukan_surat', 'ajukan_surat')->name('ajukan_surat');
     Route::get('/detail_surat', 'detail_surat')->name('detail_surat');
     // Route::get('warga/ajukansurat2', 'PagesControllerW@ajukansurat2')->name('pages.ajukansurat2');
@@ -98,16 +102,16 @@ Route::controller(SuratController::class) -> group(function(){
 
 
 // FORM INFORMASI
-Route::controller(InfoController::class) -> group(function(){
+Route::controller(InfoController::class)->group(function () {
     // Route::get('/tambahinfo', 'PagesControllerRT@tambahinfo')->name('pages.tambahinfo');
 });
 
 // FORM KEUANGAN
-Route::controller(KeuanganController::class) -> group(function(){
+Route::controller(KeuanganController::class)->group(function () {
     // Route::get('/tambahuang', 'PagesControllerRT@tambahuang')->name('pages.tambahuang');
 });
 
 // FORM BANSOS
-Route::controller(BansosController::class) -> group(function(){
+Route::controller(BansosController::class)->group(function () {
     //
 });
