@@ -40,4 +40,39 @@ class PagesControllerRW extends Controller
             "title" => "datawargarw"
         ]);
     }
+
+    public function bantuansosialrw()
+    {
+        return view('rw.bantuansosialrw', [
+            "title" => "bantuansosial"
+        ]);
+    }
+
+    public function bansos_subkriteria()
+    {
+        return view('rw.bansos_subkriteria', [
+            "title" => "bansos_subkriteria"
+        ]);
+    }
+
+    public function bansos_normalisasi()
+    {
+        return view('rw.bansos_normalisasi', [
+            "title" => "bansos_normalisasi"
+        ]);
+    }
+
+    public function bansos_perhitungan()
+    {
+        return view('rw.bansos_perhitungan', [
+            "title" => "bansos_perhitungan"
+        ]);
+    }
+
+    public function bansos_perankingan()
+    {
+        return view('rw.bansos_perankingan', [
+            "title" => "bansos_perankingan"
+        ]);
+    }
 }
