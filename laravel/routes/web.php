@@ -82,6 +82,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/keuanganrw', 'PagesControllerRW@keuanganrw')->name('pages.keuanganrw');
     Route::get('/inforw', 'PagesControllerRW@inforw')->name('pages.inforw');
     Route::get('/datawargarw', 'PagesControllerRW@datawargarw')->name('pages.datawargarw');
+    Route::get('/bantuansosialrw', 'PagesControllerRW@bantuansosialrw')->name('pages.bantuansosialrw');
+    Route::get('/bansos_subkriteria', 'PagesControllerRW@bansos_subkriteria')->name('pages.bansos_subkriterial');
+    Route::get('/bansos_normalisasi', 'PagesControllerRW@bansos_normalisasi')->name('pages.bansos_normalisasi');
+    Route::get('/bansos_perhitungan', 'PagesControllerRW@bansos_perhitungan')->name('pages.bansos_perhitungan');
+    Route::get('/bansos_perankingan', 'PagesControllerRW@bansos_perankingan')->name('pages.bansos_perankingan');
 });
 
 // Warga Controller (PAGES)
