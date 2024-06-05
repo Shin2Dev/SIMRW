@@ -1,0 +1,201 @@
+/* DASHBOARD PAGES */
+
+/* Title Utama */
+.main-title {
+    font-size: 1.2rem; /* Sedikit lebih besar */
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* MAIN TABLE */
+main.table {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+/* GARIS TEPI TABEL DASHBOARD */
+.table, th, td {
+    border: 1px solid #d3d3d3; /* Warna lebih lembut */
+}
+
+/* TITLE TABEL DASHBOARD */
+.table .plate {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0.4rem 1.5rem; /* Sedikit lebih kecil */
+    font-size: 1.2rem; /* Sedikit lebih kecil */
+    font-weight: bold;
+    background-color: #B0C4DE;
+    border-radius: 9px;
+    color: black;
+}
+
+/* INFORMASI, KEUANGAN, GRAFIK */
+.table__body1, .table__body2, .table__body3 {
+    width: 100%;
+    margin: 0.8rem 0;
+    border-radius: 0.6rem;
+    overflow: auto;
+}
+
+/* INFORMASI */
+.table__body1 {
+    display: flex;
+    gap: 1rem;
+}
+
+/* KEUANGAN */
+.table__body2 {
+    margin-bottom: 2rem;
+}
+
+/* TABEL INFORMASI */
+.table__body1 .card, .table__body2 table {
+    width: 100%;
+}
+
+/* KARTU INFORMASI */
+.table__body1 .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #d3d3d3; /* Warna lebih lembut */
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+/* GAMBAR CONTAINER INFORMASI */
+.table__body1 .card .jud {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* KATEGORI INFORMASI */
+.info-details {
+    margin-bottom: 5px;
+}
+
+.info-details .kategori {
+    background: #4a77b3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    color: var(--white);
+}
+
+/* KONTEN INFORMASI */
+.table__body1 .card .cont {
+    padding: 1rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.table__body1 .card .cont h4, /* Mengubah dari h3 ke h4 */
+.table__body1 .card .cont p {
+    margin-bottom: 0.5rem;
+}
+
+.table__body1 .card .cont hr {
+    margin-bottom: 1rem;
+}
+
+.table__body1 .card .cont ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.table__body1 .card .cont ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* TOMBOL DETAIL */
+.buttons {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.buttons.detail-info {
+    background-color: blue;
+}
+
+/* GAMBAR INFORMASI */
+.table__body1 .card img {
+    margin-top: 8px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* TABEL KEUANGAN */
+.table__body2 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* KOLOM TABEL KEUANGAN */
+.table__body2 th, .table__body2 td {
+    padding: 1rem;
+    text-align: left;
+}
+
+/* KOLOM TABEL KEUANGAN */
+.table__body2 thead th {
+    position: sticky;
+    top: 0;
+    background-color: #B0C4DE;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+/* KOLOM GENAP TABEL KEUANGAN */
+.table__body2 tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+/* KETIKA TABEL KEUANGAN DIGERAKKAN */
+.table__body2 tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+/* RESPONSIVE 768px (TABLET) */
+@media (max-width: 768px) {
+    .table .plate, .table .plate2 {
+        font-size: 1.2rem;
+        padding: 0.2rem 1rem;
+    }
+
+    .table__body1 {
+        flex-direction: column;
+    }
+
+    .table__body1 .card {
+        align-items: center;
+    }
+
+    .table__body1 .card .cont {
+        padding: 1rem;
+    }
+
+    .table__body1 .card img {
+        width: 80px;
+        height: 80px;
+    }
+}
+

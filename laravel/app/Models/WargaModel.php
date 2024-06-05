@@ -10,25 +10,39 @@ class WargaModel extends Model
     use HasFactory;
 
     protected $table = 'warga';
-    protected $primary_key = 'id_warga';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
 
+    // PERBAIKAN
     protected $fillable = [
-        'id_warga',
-        'nama', 
-        'nik', 
-        'alamat', 
-        'jenis_kelamin', 
+        'nik',
+        'nama',
+        'id_rt',
+        'rw',
+        'jenis_kelamin',
+        'golongan_darah',
         'tempat_lahir',
-        'tanggal_lahir', 
-        'no_hp', 
-        'status_kawin', 
+        'tanggal_lahir',
+        'alamat_ktp',
+        'alamat_domisili',
+        'no_hp',
+        'agama',
         'pekerjaan',
-        'status_warga'
+        'status_kawin',
+        'gambar_ktp',
+        'status_warga',
+        'catatan_status',
+        // 'status_keluarga',
+        // 'id_keluarga'
     ];
 
-    protected $attributes = [
-        'tempat_lahir' => 'Malang',
-        'pekerjaan' => 'pelajar',
-        'status_warga' => true
-    ];
+    public function rt()
+    {
+        return $this->belongsTo(RtModel::class, 'id_rt', 'id');
+    }
+
+    // public function keluarga()
+    // {
+    //     return $this->belongsTo(KeluargaModel::class, 'id_keluarga', 'id');
+    // }
 }

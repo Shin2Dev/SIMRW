@@ -1,0 +1,137 @@
+/* =============== Navigation ================ */
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.navigation.active {
+    width: 60px;
+}
+  
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+  
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+  
+.navigation ul li:not(:first-child):hover,
+.navigation ul li:not(:first-child).hovered {
+    background-color: var(--white);
+}
+  
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li .main-titles {
+    position: relative;
+    color: var(--white);
+    cursor: default;
+    height: 60px;
+}
+
+.navigation ul li h2 {
+    padding: 15px 20px;
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--blue);
+}
+  
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+  
+.navigation ul li a .title {
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ===================== Main ===================== */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+/* Close SIDEBARS */
+.sidebars-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.toggle-title img {
+    padding: 15px;
+    width: 70px;
+    height: auto;
+}
+
+/* =============== Responsive ================ */
+@media (max-width: 768px) {
+    .navigation {
+        width: 80px;
+        left: -80px;
+    }
+
+    .navigation.active {
+        width: 300px;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        width: 100%;
+        left: 0px;
+    }
+
+    .sidebars-close {
+        display: block;
+    }
+}
+

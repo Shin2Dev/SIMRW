@@ -1,0 +1,127 @@
+/* Container */
+.container2 {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Form Content */
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* User Details */
+.user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.forms {
+    width: 100%;
+}
+
+.input-box {
+    width: 48%;
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Textarea Styling */
+.input-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.input-box textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button */
+.button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button button,
+.button .btn-back {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button button:hover,
+.button .btn-back:hover {
+    background-color: #0056b3;
+}
+
+.btn-back {
+    text-decoration: none;
+}
+
+
+/* PENGAJUAN TAMBAH DATA */
+.dropdown-forms {
+    margin: 10px 0;
+}
+
+.dropdown-forms h3 {
+    margin: 10px 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .container2 {
+        max-width: 100%; /* Full width untuk layar kecil */
+        padding: 15px;
+    }
+    .content form .user-details .input-box {
+        width: 100%;
+    }
+}
+

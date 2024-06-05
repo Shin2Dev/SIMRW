@@ -1,0 +1,204 @@
+/* Navigasi */
+.nav {
+    padding: 0.8rem 1rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* BUTTON TAMBAH INFO */
+.tambah_info {
+    color: #fff;
+    background-color: #DE7C05;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tambah_info:hover {
+    background-color: #C57C05;
+    color: #E8E9EB;
+}
+
+/* HEADER TABLE INFORMASI */
+.table__header {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #E8E9EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+/* FILTER */
+.table__header .input-group {
+    width: 35%;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.table__header .input-group select {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+.table__header .input-group option {
+    font-size: 1rem;
+}
+
+/* Cards Containers */
+.cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0.8rem;
+    border-radius: 0.6rem;
+}
+
+/* Kartu Informasi */
+.cardinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #d3d3d3;
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.cardinfo .jud {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.cardinfo .cont {
+    padding: 1rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.cardinfo .cont h4,
+.cardinfo .cont p {
+    margin-bottom: 0.5rem;
+}
+
+.cardinfo .cont hr {
+    margin-bottom: 1rem;
+}
+
+.cardinfo img {
+    margin-top: 8px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.cardinfo ul {
+    list-style: none;
+}
+
+.info-details {
+    font-size: 0.75rem;   
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.info-details .kategori {
+    background: #4a77b3;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.info-details .status {
+    background: #4a77b3;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Tombol Aksi */
+.aksi-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.aksi-buttons .buttons {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.aksi-buttons .buttons.detail-info {
+    background-color: blue;
+}
+
+.aksi-buttons .buttons.edit {
+    background-color: green;
+}
+
+.aksi-buttons .buttons.hapus {
+    background-color: red;
+}
+
+/* PAGINATION */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .table__header .input-group {
+        width: 50%;
+    }
+    
+    .cards {
+        flex-direction: column;
+    }
+
+    .cardinfo {
+        align-items: center;
+    }
+
+    .cardinfo .jud {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .cardinfo .cont {
+        padding: 1rem;
+    }
+
+    .cardinfo img {
+        width: 80px;
+        height: 80px;
+    }
+}

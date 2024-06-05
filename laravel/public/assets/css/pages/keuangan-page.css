@@ -1,0 +1,129 @@
+/* Navigasi */
+.nav {
+    padding: 0.8rem 1rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* BUTTON TAMBAH INFO */
+.tambah_uang {
+    color: #fff;
+    background-color: #DE7C05;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tambah_uang:hover {
+    background-color: #C57C05;
+    color: #E8E9EB;
+}
+
+/* HEADER TABLE KEUANGAN */
+.table__header {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #E8E9EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* FILTER */
+.table__header .input-group {
+    width: 35%;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+.table__header .input-group select {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+.table__header .input-group option {
+    font-size: 1rem;
+}
+
+/* TABEL KEUANGAN (INTI) */
+.table__body {
+    width: 95%;
+    margin: 1rem auto;
+    background-color: #fff;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+.table__body table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__body th, .table__body td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table__body th {
+    background-color: #f4f4f4;
+}
+
+/* SCROLL BAR TABEL */
+.table__body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 0.5rem;
+}
+
+.buttons {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.buttons.hapus {
+    background-color: red;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .table__header .input-group {
+        width: 50%; /* Ubah lebar input group menjadi 100% */
+    }
+
+    .table__body {
+        width: 100%;
+    }
+
+    .table__body th, .table__body td {
+        padding: 1rem; /* Ubah padding menjadi 1rem untuk lebih jelas */
+    }
+}

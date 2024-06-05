@@ -1,0 +1,455 @@
+body {
+    background: #fff5;
+    font-weight: 300;
+    position: relative;
+}
+
+.white a {
+    color: #EFF3F8;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.6em;
+}
+
+.btn-primary {
+    background-color: #4682B4;
+    border-color: #4682B4;
+}
+
+/* ???? */
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/* .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: none repeat scroll 0 0 #fff;
+}
+
+.sk-spinner-rotating-plane.sk-spinner {
+    width: 30px;
+    height: 30px;
+    background-color: #28a7e9;
+    margin: 0 auto;
+    -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
+    animation: sk-rotatePlane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotatePlane {
+    0% {
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+@keyframes sk-rotatePlane {
+    0% {
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+} */
+
+.navbar-default {
+    background: #B0C4DE;
+    border: none;
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+    margin: 0!important;
+}
+
+.navbar-default .navbar-brand img {
+    max-width: 20%;
+    margin-top: -25px;
+}
+
+.navbar-default .nav li a {
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
+    height: 70px;
+    line-height: 40px;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus,
+.navbar-default .nav li a.current {
+    color: #4682B4;
+}
+
+.navbar-default .navbar-toggle {
+    border: none;
+    padding-top: 20px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background: #28a7e9;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+#home {
+    background-size: cover;
+    color: #fff;
+    margin-top: 70px;
+    text-align: center;
+    width: 100%;
+}
+
+#home p {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2em;
+    font-size: small;
+}
+
+#home img {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+#feature {
+    text-align: center;
+    padding: 60px 0;
+}
+
+#feature .row:last-child {
+    margin-top: 30px;
+}
+
+#feature .fa {
+    color: #B0C4DE;
+    font-size: 60px;
+}
+
+#feature h3 {
+    font-size: 20px;
+}
+
+/* fitur halaman pertama */
+#aboutus {
+    background: #B0C4DE;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#aboutus p {
+    padding-top: 10px;
+}
+
+#aboutus span {
+    float: left;
+}
+
+#aboutus .fa {
+    background: #4682B4;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+#informasi {
+    background: #f8f8f8;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#informasi h2 {
+    padding-bottom: 60px;
+}
+
+#informasi .pricing {
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* #informasi .active {
+    position: relative;
+    bottom: 20px;
+} */
+
+#informasi .pricing .pricing-title {
+    background: #B0C4DE;
+    color: #fff;
+    font-weight: bold;
+    padding: 30px;
+    border-radius: 5px 5px 0 0;
+}
+
+#informasi .pricing .pricing-title p {
+    font-size: 20px;
+}
+
+#informasi .pricing ul {
+    padding: 0;
+    margin: 0;
+}
+
+#informasi .pricing ul li {
+    display: block;
+    list-style: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 15px;
+    padding-bottom: 4px;
+    text-align: left;
+    text-transform: none;
+}
+
+#informasi .pricing .btn {
+    background: transparent;
+    border: 1px solid #B0C4DE;
+    border-radius: 3px;
+    color: #B0C4DE;
+    font-weight: bold;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+#informasi .pricing .btn:hover {
+    background: #B0C4DE;
+    color: #fff;
+}
+
+#informasi .pricing-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+#informasi img {
+    max-width: 20%;
+    height: auto;
+    margin-top: 30px;
+}
+
+#login {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#login h2 {
+    padding-bottom: 20px;
+}
+
+#login .btn {
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 40px 10px 40px;
+}
+
+#contact {
+    background: url('../../imgs/background2.jpeg') no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+#contact h2 {
+    padding-bottom: 10px;
+}
+
+#contact address {
+    padding-top: 20px;
+}
+
+#contact address .fa {
+    background: #B0C4DE;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+#contact .contact-form {
+    padding-top: 40px;
+}
+
+#contact .form-control {
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+
+#contact input {
+    height: 50px;
+}
+
+#contact input[type="submit"] {
+    background: #B0C4DE;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#contact input[type="submit"]:hover {
+    background: #B0C4DE;
+}
+
+footer {
+    background: #666;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.jumbotron {
+    background: url('../../imgs/backgrounds.jpg');
+    background-size: cover;
+    height: 540px;
+    position: relative;
+    z-index: -1;
+}
+
+.jumbotron::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    bottom: 0;
+}
+
+.jumbotron .container {
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron .display-4 {
+    font-weight: 200;
+    font-size: 3.6em;
+    margin-top: 100px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+}
+
+.jumbotron .display-4 span {
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 700px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .templatemo-box {
+        margin-bottom: 30px;
+    }
+    #pricing .active {
+        bottom: 0;
+    }
+    .pricing {
+        margin-bottom: 20px;
+    }
+    #feature img, #download img {
+        margin-top: 30px;
+    }
+    #feature1 img {
+        margin-bottom: 30px;
+    }
+
+    #login .container .row a {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-default .nav li a {
+        height: auto;
+        line-height: 2em;
+    }
+
+    #feature, #pricing, #download {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+    #contact .overlay {
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .pricing {
+        padding-bottom: 40px;
+    }
+}
