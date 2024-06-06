@@ -27,7 +27,7 @@ class DataWarga extends Controller
         $request->validate([
             'nik' => 'required|string|max:16',
             'nama' => 'required|string|max:255',
-            'rt' => 'required|string|max:3',
+            'id_rt' => 'required|integer',
             'rw' => 'required|string|max:3',
             'jenis_kelamin' => 'required|string|in:Laki-laki,Perempuan',
             'golongan_darah' => 'required|string|in:A,B,AB,O',
@@ -54,7 +54,7 @@ class DataWarga extends Controller
         WargaModel::create([
             'nik' => $request->nik,
             'nama' => $request->nama,
-            'rt' => $request->rt,
+            'id_rt' => $request->rt,
             'rw' => $request->rw,
             'jenis_kelamin' => $request->jenis_kelamin,
             'golongan_darah' => $request->golongan_darah,
@@ -86,7 +86,7 @@ class DataWarga extends Controller
         $request->validate([
             'nik' => 'required|string|max:16',
             'nama' => 'required|string|max:255',
-            'rt' => 'required|string|max:3',
+            'id_rt' => 'required|integer',
             'rw' => 'required|string|max:3',
             'jenis_kelamin' => 'required|string|in:Laki-laki,Perempuan',
             'golongan_darah' => 'required|string|in:A,B,AB,O',
@@ -120,7 +120,7 @@ class DataWarga extends Controller
         $warga->update([
             'nik' => $request->nik,
             'nama' => $request->nama,
-            'rt' => $request->rt,
+            'id_rt' => $request->rt,
             'rw' => $request->rw,
             'jenis_kelamin' => $request->jenis_kelamin,
             'golongan_darah' => $request->golongan_darah,

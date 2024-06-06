@@ -2,6 +2,10 @@
 
 @section('form-content')
     <div class="input-box">
+        <label for="id_rt" class="details">RT <span style="color: red;">*</span></label>
+        <input type="number" id="id_rt" name="id_rt" value="{{ $info->id_rt }}" readonly>
+    </div>
+    <div class="input-box">
         <label for="judul" class="details">Judul</label>
         <input type="text" id="judul" name="judul" value="{{ $info->judul }}" required autocomplete="off">
     </div>

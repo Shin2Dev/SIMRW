@@ -69,7 +69,7 @@ class PageController extends Controller
 
     // KEUANGAN
     public function keuangan($role){
-        $keuangan = KeuanganModel::paginate(10);
+        $keuangan = KeuanganModel::orderBy('tanggal', 'desc')->paginate(10);
         return view(
             'page.keuangan', 
             [

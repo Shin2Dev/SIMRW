@@ -10,8 +10,8 @@
         <input type="text" id="nama" name="nama" value="{{ old('nama', $warga->nama) }}" required autocomplete="off">
     </div>
     <div class="input-box">
-        <label for="rt" class="details">RT</label>
-        <input type="text" id="rt" name="rt" value="{{ old('rt', $warga->rt->nama_rt) }}" readonly>
+        <label for="id_rt" class="details">RT</label>
+        <input type="number" id="id_rt" name="id_rt" value="{{ old('rt', $warga->rt) }}" readonly>
     </div>
     <div class="input-box">
         <label for="rw" class="details">RW</label>

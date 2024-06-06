@@ -36,6 +36,7 @@ class KeuanganController extends Controller
 
         $validatedData = $request->validate([
             'tanggal' => 'required|date',
+            'id_rt' => 'required|integer',
             'deskripsi' => 'required|string|max:255',
             'jenis' => 'required|in:Pemasukan,Pengeluaran',
             'jumlah' => 'required|numeric',
@@ -52,6 +53,7 @@ class KeuanganController extends Controller
 
         KeuanganModel::create([
             'tanggal' => $validatedData['tanggal'],
+            'id_rt' => $validatedData['id_rt'],
             'deskripsi' => $validatedData['deskripsi'],
             'jenis' => $validatedData['jenis'],
             'jumlah' => $validatedData['jumlah'],
@@ -60,4 +62,10 @@ class KeuanganController extends Controller
 
         return redirect()->route('keuangan', ['role' => $role])->with('success', 'Laporan keuangan berhasil ditambahkan.');
     }
+
+    public function hapus_uang($role, $id){
+        KeuanganModel::destroy($id);
+        return redirect()->route('keuangan', ['role' => $role])->with('success', 'Laporan keuangan berhasil dihapus.');
+    }
 };
+

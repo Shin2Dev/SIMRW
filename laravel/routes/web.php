@@ -114,6 +114,8 @@ Route::controller(KeuanganController::class) -> group(function(){
     // FORM TAMBAH UANG
     Route::get('{role}/tambah_uang', 'tambah_uang_index')->name('tambah_uang_index');
     Route::post('{role}/tambah_uang', 'tambah_uang')->name('tambah_uang');
+
+    Route::delete('{role}/hapus_uang/{id}', 'hapus_uang')->name('hapus_uang');
 });
 
 // FORM BANSOS

@@ -53,6 +53,7 @@ class InfoController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'kategori' => 'required|exists:kategori_info,id',
+            'id_rt' => 'required|integer',
             'status' => 'required|in:Publik,Draf',
             'tanggal' => 'required|date',
             'tempat' => 'required|string|max:255',
@@ -71,6 +72,7 @@ class InfoController extends Controller
         InformasiModel::create([
             'judul' => $request->judul,
             'id_kategori' => $request->kategori,
+            'id_rt' => $request->id_rt,
             'deskripsi' => $request->deskripsi,
             'tanggal' => $request->tanggal,
             'tempat' => $request->tempat,
@@ -86,6 +88,7 @@ class InfoController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'kategori' => 'required|exists:kategori_info,id',
+            'id_rt' => 'required|integer',
             'status' => 'required|in:Publik,Draf',
             'tanggal' => 'required|date',
             'tempat' => 'required|string|max:255',
@@ -117,6 +120,7 @@ class InfoController extends Controller
         // Update informasi dengan data dari request
         $info->judul = $request->judul;
         $info->id_kategori = $request->kategori;
+        $info->id_rt = $request->id_rt;
         $info->deskripsi = $request->deskripsi;
         $info->tanggal = $request->tanggal;
         $info->tempat = $request->tempat;
@@ -135,6 +139,7 @@ class InfoController extends Controller
             return response()->json([
                 'judul' => $info->judul,
                 'deskripsi' => $info->deskripsi,
+                'id_rt' => $info->id_rt,
                 'tanggal' => $info->tanggal,
                 'tempat' => $info->tempat,
                 'gambar' => $info->gambar,

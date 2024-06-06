@@ -9,6 +9,7 @@
     </h2>
 
     <main class="table" id="customers_table">
+        @if ($role == 'rt')
         <section class="table__header">
             <a href="{{ route('ajukan_bansos', ['role' => $role]) }}" class="btn-add">+ Ajukan Bantuan Sosial</a>
             <div class="input-group">
@@ -56,5 +57,6 @@
                 </tbody>
             </table>
         </section>
+        @endif
     </main>
 @endsection

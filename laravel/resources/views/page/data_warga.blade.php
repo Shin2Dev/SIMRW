@@ -58,5 +58,10 @@
                 </tbody>
             </table>
         </section>
+
+        {{-- PAGINATION --}}
+        <div class="pagination">
+            {{ $wargas->appends(['role' => $role])->links('vendor.pagination.default') }}
+        </div>
     </main>
 @endsection

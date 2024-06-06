@@ -51,9 +51,18 @@
                             <td>Rp. {{ number_format($item->saldo, 0, ',', '.') }}</td>
                             @if ($role == 'rt')
                             <td>
-                                <a href="javascript:void(0);" class="buttons hapus">
+                                <a href="javascript:void(0);" class="buttons hapus" onclick="confirmDelete({{ $item->id }})">
                                     <ion-icon name="trash-outline"></ion-icon>&nbsp; Hapus
                                 </a>
+                                <form 
+                                    id="deleteForm-{{ $item->id }}" 
+                                    method="POST" 
+                                    action="{{ route('hapus_uang', ['id' => $item->id, 'role' => $role]) }}" 
+                                    style="display: none;"
+                                >
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
                             </td>
                             @endif
                         </tr>
@@ -84,6 +93,12 @@
                     }
                 }
             });
+        }
+
+        function confirmDelete(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                document.getElementById('deleteForm-' + id).submit();
+            }
         }
     </script>
 @endsection
