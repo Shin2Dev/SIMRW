@@ -54,7 +54,7 @@ class DataWarga extends Controller
         WargaModel::create([
             'nik' => $request->nik,
             'nama' => $request->nama,
-            'id_rt' => $request->rt,
+            'id_rt' => $request->id_rt,
             'rw' => $request->rw,
             'jenis_kelamin' => $request->jenis_kelamin,
             'golongan_darah' => $request->golongan_darah,
@@ -120,7 +120,7 @@ class DataWarga extends Controller
         $warga->update([
             'nik' => $request->nik,
             'nama' => $request->nama,
-            'id_rt' => $request->rt,
+            'id_rt' => $request->id_rt,
             'rw' => $request->rw,
             'jenis_kelamin' => $request->jenis_kelamin,
             'golongan_darah' => $request->golongan_darah,
