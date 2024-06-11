@@ -67,5 +67,4 @@ class KeuanganController extends Controller
         KeuanganModel::destroy($id);
         return redirect()->route('keuangan', ['role' => $role])->with('success', 'Laporan keuangan berhasil dihapus.');
     }
-};
-
+}

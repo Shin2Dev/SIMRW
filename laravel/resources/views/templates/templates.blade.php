@@ -18,8 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     {{-- CSS and Title --}}
 
-    <base href="http://localhost/SIMRW/laravel/public/">
-    {{-- <base href="http://klp7.dhanifudin.com/"> --}}
+    <base href="http://klp7.dhanifudin.com">
     <link rel="shortcut icon" href="assets/imgs/header.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/templates/root.css">
     <link rel="stylesheet" href="assets/css/{{ $dir }}/{{ $css }}.css">

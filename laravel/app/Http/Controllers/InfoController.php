@@ -71,6 +71,7 @@ class InfoController extends Controller
 
         InformasiModel::create([
             'judul' => $request->judul,
+	    'id_rt'=> 1,	
             'id_kategori' => $request->kategori,
             'id_rt' => $request->id_rt,
             'deskripsi' => $request->deskripsi,

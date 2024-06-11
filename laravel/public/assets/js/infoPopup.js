@@ -13,8 +13,7 @@ function openModal(id) {
     detailModal.style.display = 'flex';
 
     $.ajax({
-        url: `/SIMRW/laravel/public/tampil_info/${id}`, // Ganti dengan URL endpoint yang sesuai
-        // url: `http://klp7.dhanifudin.com/tampil_info/${id}`, // Ganti dengan URL endpoint yang sesuai
+        url: `http://klp7.dhanifudin.com/tampil_info/${id}`, // Ganti dengan URL endpoint yang sesuai
         method: 'GET',
         success: function(info) {
             document.getElementById('info-judul').innerText = info.judul;
