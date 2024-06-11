@@ -15,9 +15,11 @@ class WargaModel extends Model
 
     // PERBAIKAN
     protected $fillable = [
+        // 'id',
         'nik',
         'nama',
         'id_rt',
+        'id_keluarga',
         'rw',
         'jenis_kelamin',
         'golongan_darah',
@@ -32,8 +34,7 @@ class WargaModel extends Model
         'gambar_ktp',
         'status_warga',
         'catatan_status',
-        // 'status_keluarga',
-        // 'id_keluarga'
+        'status_keluarga',
     ];
 
     public function rt()
@@ -41,8 +42,8 @@ class WargaModel extends Model
         return $this->belongsTo(RtModel::class, 'id_rt', 'id');
     }
 
-    // public function keluarga()
-    // {
-    //     return $this->belongsTo(KeluargaModel::class, 'id_keluarga', 'id');
-    // }
+    public function keluarga()
+    {
+        return $this->belongsTo(KeluargaModel::class, 'id_keluarga', 'id');
+    }
 }

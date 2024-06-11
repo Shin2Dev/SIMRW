@@ -14,19 +14,19 @@ class InformasiModel extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'judul',
-        'id_kategori',
+        'judul_info',
+        'id_kategori_info',
         'id_rt',
-        'deskripsi',
-        'tanggal',
-        'tempat',
-        'status',
-        'gambar'
+        'deskripsi_info',
+        'tanggal_info',
+        'tempat_info',
+        'status_info',
+        'gambar_info'
     ];
     
     public function kategori_info()
     {
-        return $this->belongsTo(KategoriInfoModel::class, 'id_kategori', 'id');
+        return $this->belongsTo(KategoriInfoModel::class, 'id_kategori_info', 'id');
     }
 
     public function rt()

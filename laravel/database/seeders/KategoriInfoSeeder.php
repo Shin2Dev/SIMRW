@@ -13,11 +13,11 @@ class KategoriInfoSeeder extends Seeder
     public function run(): void
     {
         DB::table('kategori_info')->insert([
-            ['nama_kategori' => 'Sosial'],
-            ['nama_kategori' => 'Keamanan'],
-            ['nama_kategori' => 'Pendidikan'],
-            ['nama_kategori' => 'Kesehatan'],
-            ['nama_kategori' => 'Olahraga'],
+            ['nama_kategori_info' => 'Sosial'],
+            ['nama_kategori_info' => 'Keamanan'],
+            ['nama_kategori_info' => 'Pendidikan'],
+            ['nama_kategori_info' => 'Kesehatan'],
+            ['nama_kategori_info' => 'Olahraga'],
         ]);
     }
 }

@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('informasi', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->unsignedBigInteger('id_kategori');
+            $table->string('judul_info', 20);
+            $table->unsignedBigInteger('id_kategori_info');
             $table->unsignedBigInteger('id_rt');
-            $table->text('deskripsi');
-            $table->date('tanggal');
-            $table->string('tempat', 30);
-            $table->enum('status', ['Publik', 'Draf']);
-            $table->string('gambar');
+            $table->string('deskripsi_info');
+            $table->date('tanggal_info');
+            $table->string('tempat_info', 30);
+            $table->enum('status_info', ['Publik', 'Draf']);
+            $table->string('gambar_info');
             $table->timestamps();
 
-            $table->foreign('id_kategori')->references('id')->on('kategori_info');
+            $table->foreign('id_kategori_info')->references('id')->on('kategori_info');
             $table->foreign('id_rt')->references('id')->on('rt');
         });
     }

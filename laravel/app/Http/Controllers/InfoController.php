@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\InformasiModel;
 use App\Models\KategoriInfoModel;
 use Illuminate\Http\Request;
+use App\Models\WargaModel;
+use Illuminate\Support\Facades\Auth;
 
 class InfoController extends Controller
 {
     // Halaman Buat Informasi
     public function tambah_info_index($role){
+        $user = Auth::user();
+        $warga = WargaModel::where('nik', $user->username)->first();
+
         $kategoriInfos = KategoriInfoModel::all();
         return view
         (
@@ -23,7 +28,7 @@ class InfoController extends Controller
                 'pages' => 'info',
                 'id' => null
             ], 
-            compact('kategoriInfos')
+            compact('kategoriInfos', 'warga')
         );
     }
 
@@ -51,34 +56,33 @@ class InfoController extends Controller
     // Buat Informasi
     public function tambah_info($role, Request $request){
         $request->validate([
-            'judul' => 'required|string|max:255',
-            'kategori' => 'required|exists:kategori_info,id',
-            'id_rt' => 'required|integer',
-            'status' => 'required|in:Publik,Draf',
-            'tanggal' => 'required|date',
-            'tempat' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'judul_info' => 'required|string|max:255',
+            'id_kategori_info' => 'required|exists:kategori_info,id',
+            'rt' => 'required|exists:rt,id',
+            'status_info' => 'required|in:Publik,Draf',
+            'tanggal_info' => 'required|date',
+            'tempat_info' => 'required|string|max:255',
+            'deskripsi_info' => 'required|string',
+            'gambar_info' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         // Tentukan path penyimpanan (Simpan Di Assets)
         $destinationPath = public_path('assets/imgs/info');
-        $gambar = $request->file('gambar');
+        $gambar = $request->file('gambar_info');
         $gambarName = time() . '_' . $gambar->getClientOriginalName();
 
         // Pindahkan file ke direktori tujuan
         $gambar->move($destinationPath, $gambarName);
 
         InformasiModel::create([
-            'judul' => $request->judul,
-	    'id_rt'=> 1,	
-            'id_kategori' => $request->kategori,
-            'id_rt' => $request->id_rt,
-            'deskripsi' => $request->deskripsi,
-            'tanggal' => $request->tanggal,
-            'tempat' => $request->tempat,
-            'status' => $request->status,
-            'gambar' => $gambarName,
+            'judul_info' => $request->judul_info,
+            'id_kategori_info' => $request->id_kategori_info,
+            'id_rt' => $request->rt,
+            'deskripsi_info' => $request->deskripsi_info,
+            'tanggal_info' => $request->tanggal_info,
+            'tempat_info' => $request->tempat_info,
+            'status_info' => $request->status_info,
+            'gambar_info' => $gambarName,
         ]);
 
         return redirect()->route('info', ['role' => $role])->with('success', 'Informasi berhasil ditambahkan');
@@ -86,15 +90,17 @@ class InfoController extends Controller
 
     // Edit Informasi
     public function edit_info($role, $id, Request $request){
+        // dd($request->all());
+
         $request->validate([
-            'judul' => 'required|string|max:255',
-            'kategori' => 'required|exists:kategori_info,id',
-            'id_rt' => 'required|integer',
-            'status' => 'required|in:Publik,Draf',
-            'tanggal' => 'required|date',
-            'tempat' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'judul_info' => 'required|string|max:255',
+            'id_kategori_info' => 'required|exists:kategori_info,id',
+            'rt' => 'required|exists:rt,id',
+            'status_info' => 'required|in:Publik,Draf',
+            'tanggal_info' => 'required|date',
+            'tempat_info' => 'required|string|max:255',
+            'deskripsi_info' => 'required|string',
+            'gambar_info' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $info = InformasiModel::with('kategori_info')->find($id);
@@ -105,27 +111,27 @@ class InfoController extends Controller
         }
 
         // Jika mengganti gambar
-        if ($request->hasFile('gambar')) {
+        if ($request->hasFile('gambar_info')) {
             // Hapus gambar lama jika ada
-            if ($info->gambar && file_exists(public_path('assets/imgs/info/' . $info->gambar))) {
-                unlink(public_path('assets/imgs/info/' . $info->gambar));
+            if ($info->gambar_info && file_exists(public_path('assets/imgs/info/' . $info->gambar_info))) {
+                unlink(public_path('assets/imgs/info/' . $info->gambar_info));
             }
 
             $destinationPath = public_path('assets/imgs/info');
-            $gambar = $request->file('gambar');
+            $gambar = $request->file('gambar_info');
             $gambarName = time() . '_' . $gambar->getClientOriginalName();
             $gambar->move($destinationPath, $gambarName);
-            $info->gambar = $gambarName;
+            $info->gambar_info = $gambarName;
         }
 
         // Update informasi dengan data dari request
-        $info->judul = $request->judul;
-        $info->id_kategori = $request->kategori;
-        $info->id_rt = $request->id_rt;
-        $info->deskripsi = $request->deskripsi;
-        $info->tanggal = $request->tanggal;
-        $info->tempat = $request->tempat;
-        $info->status = $request->status;
+        $info->judul_info = $request->judul_info;
+        $info->id_kategori_info = $request->id_kategori_info;
+        $info->id_rt = $request->rt;
+        $info->deskripsi_info = $request->deskripsi_info;
+        $info->tanggal_info = $request->tanggal_info;
+        $info->tempat_info = $request->tempat_info;
+        $info->status_info = $request->status_info;
         $info->save();
 
         // Redirect ke route halaman informasi
@@ -133,19 +139,18 @@ class InfoController extends Controller
     }
     
     // Tampilkan Detail Salah Satu Informasi (POP UP AJAX)
-    public function tampil_info($id){
+    public function tampil_info($role, $id){
         $info = InformasiModel::with('kategori_info')->find($id);
         
         if ($info) {
             return response()->json([
-                'judul' => $info->judul,
-                'deskripsi' => $info->deskripsi,
-                'id_rt' => $info->id_rt,
-                'tanggal' => $info->tanggal,
-                'tempat' => $info->tempat,
-                'gambar' => $info->gambar,
-                'kategori' => $info->kategori_info->nama_kategori,
-                'status' => $info->status,
+                'judul_info' => $info->judul_info,
+                'deskripsi_info' => $info->deskripsi_info,
+                'tanggal_info' => $info->tanggal_info,
+                'tempat_info' => $info->tempat_info,
+                'gambar_info' => $info->gambar_info,
+                'kategori' => $info->kategori_info->nama_kategori_info,
+                'nama_rt' => $info->rt->nama_rt,
             ]);
         } else {
             return response()->json(['error' => 'Informasi tidak ditemukan'], 404);
@@ -156,6 +161,9 @@ class InfoController extends Controller
     public function hapus_info($role, $id){
         $info = InformasiModel::find($id);
         if ($info) {
+            if ($info->gambar_info && file_exists(public_path('assets/imgs/info/' . $info->gambar_info))) {
+                unlink(public_path('assets/imgs/info/' . $info->gambar_info));
+            }
             $info->delete();
             return redirect()->route('info', ['role' => $role])->with('success', 'Informasi berhasil dihapus');
         } else {

@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\WargaModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class DataWarga extends Controller
 {
     // FORM TAMBAH WARGA
     public function tambah_warga_index($role) {
+        $user = Auth::user();
+        $warga = WargaModel::where('nik', $user->username)->first();
+
         return view('form.data-warga.tambah-warga', [
             'dir' => 'templates', 
             'css' => 'form', 
@@ -19,15 +23,15 @@ class DataWarga extends Controller
             'route' => 'tambah_warga',
             'pages' => 'data_warga',
             'id' => null
-        ]);
+        ], compact('warga'));
     }
 
     // ALGORITMA TAMBAH DATA WARGA
     public function tambah_warga($role, Request $request) {
         $request->validate([
-            'nik' => 'required|string|max:16',
+            'nik' => 'required|string|size:16',
             'nama' => 'required|string|max:255',
-            'id_rt' => 'required|integer',
+            'rt' => 'required|exists:rt,id',
             'rw' => 'required|string|max:3',
             'jenis_kelamin' => 'required|string|in:Laki-laki,Perempuan',
             'golongan_darah' => 'required|string|in:A,B,AB,O',
@@ -54,7 +58,7 @@ class DataWarga extends Controller
         WargaModel::create([
             'nik' => $request->nik,
             'nama' => $request->nama,
-            'id_rt' => $request->id_rt,
+            'id_rt' => $request->rt,
             'rw' => $request->rw,
             'jenis_kelamin' => $request->jenis_kelamin,
             'golongan_darah' => $request->golongan_darah,
@@ -84,9 +88,9 @@ class DataWarga extends Controller
 
     public function edit_warga($role, $id, Request $request){
         $request->validate([
-            'nik' => 'required|string|max:16',
+            'nik' => 'required|string|size:16',
             'nama' => 'required|string|max:255',
-            'id_rt' => 'required|integer',
+            'rt' => 'required|exists:rt,id',
             'rw' => 'required|string|max:3',
             'jenis_kelamin' => 'required|string|in:Laki-laki,Perempuan',
             'golongan_darah' => 'required|string|in:A,B,AB,O',
@@ -120,7 +124,7 @@ class DataWarga extends Controller
         $warga->update([
             'nik' => $request->nik,
             'nama' => $request->nama,
-            'id_rt' => $request->id_rt,
+            'id_rt' => $request->rt,
             'rw' => $request->rw,
             'jenis_kelamin' => $request->jenis_kelamin,
             'golongan_darah' => $request->golongan_darah,
@@ -191,5 +195,27 @@ class DataWarga extends Controller
             'pages' => 'data_warga',
             'id' => $id
         ], compact('warga'));
+    }
+
+    public function tampil_warga(Request $request){
+        $query = $request->input('query');
+        
+        $warga = WargaModel::where('nama', 'like', $query . '%')->get();
+        
+        if ($warga->isNotEmpty()) {
+            return response()->json($warga);
+        }
+    }
+
+    public function tampil_warga_rt(Request $request){
+        $user = Auth::user();
+        $warga = WargaModel::where('nik', $user->username)->first();
+        $query = $request->input('query');
+        
+        $warga = WargaModel::where('id_rt', $warga->id_rt)->where('nama', 'like', $query . '%')->get();
+        
+        if ($warga->isNotEmpty()) {
+            return response()->json($warga);
+        }
     }
 }

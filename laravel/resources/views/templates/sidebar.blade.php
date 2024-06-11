@@ -54,6 +54,14 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('data_keluarga', ['role' => $role]) }}">
+                        <span class="icon">
+                            <ion-icon name="people-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Data Keluarga</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('data_rt', ['role' => $role]) }}">
                         <span class="icon">
                             <ion-icon name="people-circle-outline"></ion-icon>

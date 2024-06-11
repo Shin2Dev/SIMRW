@@ -14,76 +14,215 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
+            // Ketua RW
             [
-                'username' => '1234567890123456',
-                'password' => Hash::make('1234567890123456'),
-                'role' => 'warga',
+                'username' => '3507231505800001',
+                'password' => Hash::make('anggota_rw'),
+                'role' => 'rw',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            // Sekretaris RW
             [
-                'username' => '2345678901234567',
-                'password' => Hash::make('2345678901234567'),
-                'role' => 'warga',
+                'username' => '3507230202900002',
+                'password' => Hash::make('anggota_rw'),
+                'role' => 'rw',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            // Bendahara RW
             [
-                'username' => '3456789012345678',
-                'password' => Hash::make('3456789012345678'),
-                'role' => 'warga',
+                'username' => '3507230303000003',
+                'password' => Hash::make('anggota_rw'),
+                'role' => 'rw',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            // Ketua RT 001
             [
-                'username' => '4567890123456789',
-                'password' => Hash::make('4567890123456789'),
-                'role' => 'warga',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'username' => '5678901234567890',
-                'password' => Hash::make('5678901234567890'),
-                'role' => 'warga',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'username' => '6789012345678901',
-                'password' => Hash::make('6789012345678901'),
-                'role' => 'warga',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'username' => '7890123456789012',
-                'password' => Hash::make('7890123456789012'),
-                'role' => 'warga',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'username' => '8901234567890123',
-                'password' => Hash::make('8901234567890123'),
-                'role' => 'warga',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'username' => '191505040001',
-                'password' => Hash::make('191505040001'),
+                'username' => '3507231505850001',
+                'password' => Hash::make('anggota_rt'),
                 'role' => 'rt',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            // Sekretaris RT 001
             [
-                'username' => '200405040001',
-                'password' => Hash::make('200405040001'),
-                'role' => 'rw',
+                'username' => '3507230606920002',
+                'password' => Hash::make('anggota_rt'),
+                'role' => 'rt',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]
+            ],
+            // Ketua RT 002
+            [
+                'username' => '3507230707880003',
+                'password' => Hash::make('anggota_rt'),
+                'role' => 'rt',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Ketua RT 003
+            [
+                'username' => '3507230808930004',
+                'password' => Hash::make('anggota_rt'),
+                'role' => 'rt',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Ketua RT 004
+            [
+                'username' => '3507230404950004',
+                'password' => Hash::make('anggota_rt'),
+                'role' => 'rt',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Warga RT 001
+            [
+                'username' => '3507231505040001',
+                'password' => Hash::make('3507231505040001'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507231505040002',
+                'password' => Hash::make('3507231505040002'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507231010950003',
+                'password' => Hash::make('3507231010950003'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507231111850004',
+                'password' => Hash::make('3507231111850004'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507231212900005',
+                'password' => Hash::make('3507231212900005'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Warga RT 002
+            [
+                'username' => '3507231010950001',
+                'password' => Hash::make('3507231010950001'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230205920002',
+                'password' => Hash::make('3507230205920002'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230808900003',
+                'password' => Hash::make('3507230808900003'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230303950004',
+                'password' => Hash::make('3507230303950004'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230909850005',
+                'password' => Hash::make('3507230909850005'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Warga RT 003
+            [
+                'username' => '3507231111850001',
+                'password' => Hash::make('3507231111850001'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230101900002',
+                'password' => Hash::make('3507230101900002'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230202920003',
+                'password' => Hash::make('3507230202920003'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230303850004',
+                'password' => Hash::make('3507230303850004'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230404980005',
+                'password' => Hash::make('3507230404980005'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            // Warga RT 004
+            [
+                'username' => '3507230101900006',
+                'password' => Hash::make('3507230101900006'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230202920007',
+                'password' => Hash::make('3507230202920007'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230303940008',
+                'password' => Hash::make('3507230303940008'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230404960009',
+                'password' => Hash::make('3507230404960009'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'username' => '3507230505980010',
+                'password' => Hash::make('3507230505980010'),
+                'role' => 'warga',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }
+

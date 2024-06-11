@@ -44,3 +44,4 @@ function closeModal() {
         document.body.style.overflow = ''; // Mengembalikan scroll pada body
     }, { once: true });
 }
+

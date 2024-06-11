@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,11 +20,13 @@ class LoginController extends Controller
     // Autentikasi Login dan Pembagian Role (Warga, RT, RW)
     public function login(Request $request){
         $credentials = $request->only('username', 'password');
-
+        
         if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
             $user = Auth::user();
 
-            $request->session()->regenerate();
+            $request->session()->put('user', $user);
 
             return redirect()->route('dashboard', ['role' => $user->role])->with('success', 'Berhasil login.');
         }
@@ -39,5 +42,42 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/login')->with('success', 'Berhasil logout.');
+    }
+
+    // Lupa Password
+    public function forgot_password(Request $request){
+        $request->validate([
+            'nik' => 'required|string|size:16'
+        ]);
+
+        $user = User::where('username', $request->nik)->first();
+
+        if (!$user) {
+            return back()->with('error', 'NIK tidak ditemukan / tidak terdaftar');
+        }
+
+        return redirect()->route('ubah_pass');
+    }
+
+    public function ubah_pass_index(){
+        return view('page.ubah_password', [
+            'dir' => 'pages',
+            'css' => 'login-page',
+            'title' => 'Ubah Password'
+        ]);
+    }
+
+    public function ubah_pass(Request $request){
+        $request->validate([
+            'username' => 'required|string|size:16',
+            'password_baru' => 'required',
+            'ulangi_password_baru' => 'required'
+        ]);
+
+        $user = User::where('username', $request->username)->first();
+
+        if ($request->password_baru == $request->ulangi_password_baru){
+            
+        }
     }
 }

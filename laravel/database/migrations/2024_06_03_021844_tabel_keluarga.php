@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('keluarga', function (Blueprint $table) {
-        //     // $table->id();
-        //     // $table->string('nomor_kk')->unique();
-        //     // $table->timestamps();
-        // });
+        Schema::create('keluarga', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_rt');
+            $table->string('nomor_kk')->unique();
+            $table->string('gambar_kk');
+            $table->timestamps();
+
+            $table->foreign('id_rt')->references('id')->on('rt');
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Schema::dropIfExists('keluarga');
+        Schema::dropIfExists('keluarga');
     }
 };

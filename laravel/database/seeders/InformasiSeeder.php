@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\InformasiModel;
 
 class InformasiSeeder extends Seeder
 {
@@ -12,151 +13,49 @@ class InformasiSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('informasi')->insert([
+        $informasi = [
             [
-                'judul' => 'Kerja Bakti Rutinan',
-                'id_kategori' => 1,
+                'judul_info' => 'Kerja Bakti Rutinan',
+                'id_kategori_info' => 1,
                 'id_rt' => 1,
-                'deskripsi' => 'Kerja Bakti Rutinan adalah program yang dikelola oleh Komisariat Kerja Bakti Rutinan (KBR) yang bertujuan untuk meningkatkan daya tanggap dan kualitas layanan pemerintahan di Indonesia.',
-                'tanggal' => '2024-06-02',
-                'tempat' => 'KBR',
-                'status' => 'Publik',
-                'gambar' => 'gambar_kerja_bakti.jpg',
+                'deskripsi_info' => 'Kerja Bakti Rutinan adalah program yang dikelola oleh Komisariat Kerja Bakti Rutinan (KBR) yang bertujuan untuk meningkatkan daya tanggap dan kualitas layanan pemerintahan di Indonesia.',
+                'tanggal_info' => '2024-06-02',
+                'tempat_info' => 'KBR',
+                'status_info' => 'Publik',
+                'gambar_info' => 'gambar_kerja_bakti.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'judul' => 'Kompetisi Catur',
-                'id_kategori' => 5,
+                'judul_info' => 'Kompetisi Catur',
+                'id_kategori_info' => 5,
                 'id_rt' => 1,
-                'deskripsi' => 'Kompetisi Catur adalah kompetisi yang diadakan oleh Komisariat Kerja Bakti Rutinan (KBR) yang bertujuan untuk meningkatkan daya tanggap dan kualitas layanan pemerintahan di Indonesia.',
-                'tanggal' => '2024-06-02',
-                'tempat' => 'KBR',
-                'status' => 'Publik',
-                'gambar' => 'gambar_catur.jpg',
+                'deskripsi_info' => 'Kompetisi Catur adalah kompetisi yang diadakan oleh Komisariat Kerja Bakti Rutinan (KBR) yang bertujuan untuk meningkatkan daya tanggap dan kualitas layanan pemerintahan di Indonesia.',
+                'tanggal_info' => '2024-06-02',
+                'tempat_info' => 'KBR',
+                'status_info' => 'Publik',
+                'gambar_info' => 'gambar_catur.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'judul' => 'Lomba Masak',
-                'id_kategori' => 3,
+                'judul_info' => 'Lomba Masak',
+                'id_kategori_info' => 3,
                 'id_rt' => 1,
-                'deskripsi' => 'Lomba Masak adalah acara tahunan yang diadakan oleh komunitas lokal untuk mempromosikan keterampilan memasak dan mempererat hubungan antarwarga.',
-                'tanggal' => '2024-07-15',
-                'tempat' => 'Balai Desa',
-                'status' => 'Publik',
-                'gambar' => 'gambar_lomba_masak.jpg',
+                'deskripsi_info' => 'Lomba Masak adalah acara tahunan yang diadakan oleh komunitas lokal untuk mempromosikan keterampilan memasak dan mempererat hubungan antarwarga.',
+                'tanggal_info' => '2024-07-15',
+                'tempat_info' => 'Balai Desa',
+                'status_info' => 'Publik',
+                'gambar_info' => 'gambar_lomba_masak.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // [
-            //     'judul' => 'Festival Musik',
-            //     'id_kategori' => 4,
-            //     'id_rt' => 4,
-            //     'deskripsi' => 'Festival Musik adalah acara yang menampilkan berbagai band lokal dan bertujuan untuk menghibur warga serta mempromosikan bakat musik lokal.',
-            //     'tanggal' => '2024-08-20',
-            //     'tempat' => 'Lapangan Kota',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_festival_musik.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Lomba Lari',
-            //     'id_kategori' => 5,
-            //     'id_rt' => 1,
-            //     'deskripsi' => 'Lomba Lari adalah acara olahraga yang diadakan untuk meningkatkan kesehatan dan kebugaran warga.',
-            //     'tanggal' => '2024-09-10',
-            //     'tempat' => 'Stadion Utama',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_lomba_lari.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Pameran Seni',
-            //     'id_kategori' => 2,
-            //     'id_rt' => 2,
-            //     'deskripsi' => 'Pameran Seni menampilkan karya seni dari berbagai seniman lokal untuk mempromosikan budaya dan seni.',
-            //     'tanggal' => '2024-10-05',
-            //     'tempat' => 'Galeri Seni',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_pameran_seni.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Bazar Amal',
-            //     'id_kategori' => 1,
-            //     'id_rt' => 3,
-            //     'deskripsi' => 'Bazar Amal diadakan untuk mengumpulkan dana bagi kegiatan sosial dan kemanusiaan.',
-            //     'tanggal' => '2024-11-12',
-            //     'tempat' => 'Lapangan Desa',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_bazar_amal.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Pelatihan Kewirausahaan',
-            //     'id_kategori' => 3,
-            //     'id_rt' => 4,
-            //     'deskripsi' => 'Pelatihan Kewirausahaan bertujuan untuk memberikan pengetahuan dan keterampilan dalam berbisnis kepada warga.',
-            //     'tanggal' => '2024-12-01',
-            //     'tempat' => 'Aula Kecamatan',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_pelatihan_kewirausahaan.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Lomba Fotografi',
-            //     'id_kategori' => 4,
-            //     'id_rt' => 1,
-            //     'deskripsi' => 'Lomba Fotografi diadakan untuk mengasah keterampilan fotografi warga dan mempromosikan keindahan lokal.',
-            //     'tanggal' => '2024-12-15',
-            //     'tempat' => 'Taman Kota',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_lomba_fotografi.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Seminar Kesehatan',
-            //     'id_kategori' => 2,
-            //     'id_rt' => 2,
-            //     'deskripsi' => 'Seminar Kesehatan diadakan untuk memberikan edukasi tentang pentingnya menjaga kesehatan.',
-            //     'tanggal' => '2024-12-20',
-            //     'tempat' => 'Puskesmas',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_seminar_kesehatan.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Lomba Mewarnai',
-            //     'id_kategori' => 3,
-            //     'id_rt' => 3,
-            //     'deskripsi' => 'Lomba Mewarnai diadakan untuk anak-anak dalam rangka mengembangkan kreativitas mereka.',
-            //     'tanggal' => '2024-12-25',
-            //     'tempat' => 'Balai Desa',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_lomba_mewarnai.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'judul' => 'Pentas Seni',
-            //     'id_kategori' => 4,
-            //     'id_rt' => 4,
-            //     'deskripsi' => 'Pentas Seni menampilkan berbagai pertunjukan seni dari warga setempat untuk menghibur dan mempererat hubungan antarwarga.',
-            //     'tanggal' => '2024-12-30',
-            //     'tempat' => 'Lapangan Kota',
-            //     'status' => 'Publik',
-            //     'gambar' => 'gambar_pentas_seni.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ]
-        ]);
+            // ...
+        ];
+
+        foreach ($informasi as $info) {
+            InformasiModel::create($info);
+        }
     }
 }
+

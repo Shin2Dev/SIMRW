@@ -14,8 +14,8 @@
         <p id="nama">{{ $warga->nama }}</p>
     </div>
     <div class="input-box">
-        <label for="id_rt" class="details">RT</label>
-        <p id="id_rt">{{ $warga->rt->nama_rt }}</p>
+        <label for="rt" class="details">RT</label>
+        <p id="rt">{{ $warga->rt->nama_rt }}</p>
     </div>
     <div class="input-box">
         <label for="rw" class="details">RW</label>

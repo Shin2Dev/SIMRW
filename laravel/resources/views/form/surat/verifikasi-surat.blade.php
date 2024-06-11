@@ -1,63 +1,43 @@
 @extends('templates.form')
-@section('form-content')
-        
-
-    <div class="container2">
-        <div class="title">
-            <p>Detail Pengajuan Surat</p>
-        </div>
-        <div class="content">
-            <form action="#">
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">Nama Lengkap</span>
-                        <p>Tyase</p>
-                    </div>
-                    <div class="input-box">
-                        <span class="details"style="font-weight: bold">Agama</span>
-                        <p>Islam</p>
-                    </div>
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">No KTP</span>
-                        <p>565656</p>
-
-                    </div>
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">Pekerjaan</span>
-                        <p>Mahasiswa</p>
-
-                    </div>
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">Tgl Lahir</span>
-
-                        <p>20 Mei 2003</p>
-
-                    </div>
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">Status</span>
-                        <p>Bwlum Kawin</p>
-
-                    </div>
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">Jenis Kelamin</span>
-                        <p>Perempuan</p>
-                    </div>
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">Alamat</span>
-                        <p>Jl Semanggi Barat</p>
-
-                    </div>
-                    <div class="input-box">
-                        <span class="details" style="font-weight: bold">Tujuan</span>
-                        <p>Untuk mengurus KIP</p>
-                    </div>
-                </div>
-
-                <div class="butsur">
-                    <button class="but2">Tolak</button>
-                    <button class="but1">Verifikasi</button>
-                </div>
-            </form>
-        </div>
-    </div>
+@section('form-content')   
+@php
+    use Carbon\Carbon;
+    Carbon::setLocale('id');
+@endphp
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Nama Lengkap</label>
+    <input type="text" readonly value="{{ $surat->warga->nama }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">NIK</label>
+    <input type="text" readonly value="{{ $surat->warga->nik }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Jenis Kelamin</label>
+    <input type="text" readonly value="{{ $surat->warga->jenis_kelamin }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Tempat, Tgl Lahir</label>
+    <input type="text" readonly value="{{ $surat->warga->tempat_lahir }}, {{ Carbon::parse($surat->warga->tanggal_lahir)->translatedFormat('j F Y') }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Agama</label>
+    <input type="text" readonly value="{{ $surat->warga->agama }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Status Perkawinan</label>
+    <input type="text" readonly value="{{ $surat->warga->status_kawin }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Alamat Domisili</label>
+    <input type="text" readonly value="{{ $surat->warga->alamat_domisili }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Jenis Surat</label>
+    <input type="text" readonly value="{{ $surat->jenis_surat->nama_jenis_surat }}">
+</div>
+<div class="input-box">
+    <label class="details" style="font-weight: bold">Keperluan Surat</label>
+    <input type="text" readonly value="{{ $surat->keperluan_surat }}">
+</div>
 @endsection

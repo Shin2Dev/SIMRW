@@ -1,0 +1,46 @@
+* {
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+.kop-surat, .judul-surat {
+    text-align: center;
+}
+
+.judul-surat h3 {
+    text-decoration: underline;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.isi-surat div {
+    margin: 20px 0
+}
+
+.isi-surat .isi p {
+    text-indent: 40px;
+    padding: 20px 0;
+}
+
+.penutup p{
+    text-indent: 40px;
+}
+
+.isi-surat ul {
+    list-style: none;
+    text-indent: 40px;
+}
+
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 100px;
+    right: 50px;
+}
+
+footer p:nth-child(2){
+    margin-bottom: 80px;
+}
