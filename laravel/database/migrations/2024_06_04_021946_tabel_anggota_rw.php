@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('anggota_rw', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('nip', 18)->unique();
-        //     $table->unsignedBigInteger('id_warga');
-        //     $table->string('foto_profil');
-        //     $table->string('jabatan');
-        //     $table->timestamps();
+        Schema::create('anggota_rw', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_warga');
+            $table->unsignedBigInteger('id_jabatan');
+            $table->string('foto_profil');
+            $table->string('periode', 9);
+            $table->timestamps();
 
-        //     $table->foreign('id_warga')->references('id')->on('warga');
-        // });
+            $table->foreign('id_warga')->references('id')->on('warga');
+            $table->foreign('id_jabatan')->references('id')->on('jabatan');
+        });
     }
 
     /**

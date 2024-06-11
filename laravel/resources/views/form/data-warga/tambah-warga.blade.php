@@ -10,8 +10,8 @@
         <input type="text" id="nama" name="nama" required autocomplete="off">
     </div>
     <div class="input-box">
-        <label for="id_rt" class="details">RT <span style="color: red;">*</span></label>
-        <input type="number" id="id_rt" name="id_rt" value="1" readonly>
+        <label for="rt" class="details">RT <span style="color: red;">*</span></label>
+        <input type="number" id="rt" name="rt" value="{{ $warga->rt->nama_rt }}" readonly>
     </div>
     <div class="input-box">
         <label for="rw" class="details">RW <span style="color: red;">*</span></label>

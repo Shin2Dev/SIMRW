@@ -24,27 +24,30 @@
                 <thead>
                     <tr>
                         <th>Nomor KK</th>
+                        <th>Kepala Keluarga</th>
                         <th>Jumlah Anggota</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
-                {{-- <tbody>
-                    <tr>
-                        <td>Nama Lengkap</td>
-                        <td>NIK</td>
-                        <td>Jenis Kelamin</td>
-                        <td>
-                            <a href="{{ route('detail_warga') }}" class="btn-detail">
-                                <ion-icon name="eye-outline"></ion-icon>&nbsp; Detail Data
-                            </a>
-                            @if ($role == 'rt')
-                                <a href="{{ route('edit_warga') }}" class="btn-edit">
-                                    <ion-icon name="create-outline"></ion-icon>&nbsp; Edit Data
+                <tbody>
+                    @foreach ($keluargas as $keluarga)
+                        <tr>
+                            <td>{{ $keluarga->nomor_kk }}</td>
+                            <td>{{ $keluarga->kepalaKeluarga->nama }}</td>
+                            <td>{{ $keluarga->warga->count() }}</td>
+                            <td>
+                                <a href="{{ route('detail_keluarga', ['role' => $role, 'id' => $keluarga->id]) }}" class="btn-detail">
+                                    <ion-icon name="eye-outline"></ion-icon>&nbsp; Detail Data
                                 </a>
-                            @endif
-                        </td>
-                    </tr>
-                </tbody> --}}
+                                @if ($role == 'rt')
+                                    <a href="{{ route('edit_keluarga', ['role' => $role, 'id' => $keluarga->id]) }}" class="btn-edit">
+                                        <ion-icon name="create-outline"></ion-icon>&nbsp; Edit Data
+                                    </a>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </section>
     </main>

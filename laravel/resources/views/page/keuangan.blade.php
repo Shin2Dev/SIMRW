@@ -22,8 +22,16 @@
             <div class="input-group">
                 <select id="filter" onchange="filterData()">
                     <option value="all">Semua</option>
-                    <option value="pemasukan">Pemasukan</option>
-                    <option value="pengeluaran">Pengeluaran</option>
+                    <option value="" disabled>Bulan</option>
+                    @foreach (['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'] as $month)
+                        <option value="{{ $month }}">{{ $month }}</option>
+                    @endforeach
+                    @if ($role == 'rw')
+                        <option value="" disabled>RT</option>
+                        @foreach ($rt as $rt)
+                            <option value="{{ $rt->id }}">{{ $rt->nama_rt }}</option>
+                        @endforeach
+                    @endif
                 </select>
             </div>
         </section>
@@ -36,37 +44,49 @@
                         <th>Masuk</th>
                         <th>Keluar</th>
                         <th>Saldo</th>
+                        @if ($role == 'rw')
+                        <th>RT</th>
+                        @endif
                         @if ($role == 'rt')
                         <th>Aksi</th>
                         @endif
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($keuangan as $item)
-                        <tr data-type="{{ strtolower($item->jenis) }}">
-                            <td>{{ Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}</td>
-                            <td>{{ $item->deskripsi }}</td>
-                            <td>{{ $item->jenis == 'Pemasukan' ? 'Rp. ' . number_format($item->jumlah, 0, ',', '.') : 'Rp. -' }}</td>
-                            <td>{{ $item->jenis == 'Pengeluaran' ? 'Rp. ' . number_format($item->jumlah, 0, ',', '.') : 'Rp. -' }}</td>
-                            <td>Rp. {{ number_format($item->saldo, 0, ',', '.') }}</td>
-                            @if ($role == 'rt')
-                            <td>
-                                <a href="javascript:void(0);" class="buttons hapus" onclick="confirmDelete({{ $item->id }})">
-                                    <ion-icon name="trash-outline"></ion-icon>&nbsp; Hapus
-                                </a>
-                                <form 
-                                    id="deleteForm-{{ $item->id }}" 
-                                    method="POST" 
-                                    action="{{ route('hapus_uang', ['id' => $item->id, 'role' => $role]) }}" 
-                                    style="display: none;"
-                                >
-                                    @csrf
-                                    @method('DELETE')
-                                </form>
-                            </td>
-                            @endif
+                    @if(count($keuangan) > 0)
+                        @foreach ($keuangan as $item)
+                            <tr data-type="{{ Carbon::parse($item->tanggal_keuangan)->translatedFormat('F') }}" data-rt="{{ $item->id_rt }}">
+                                <td>{{ Carbon::parse($item->tanggal_keuangan)->translatedFormat('d F Y') }}</td>
+                                <td>{{ $item->deskripsi_keuangan }}</td>
+                                <td>{{ $item->jenis_keuangan == 'Pemasukan' ? 'Rp. ' . number_format($item->jumlah_keuangan, 0, ',', '.') : 'Rp. -' }}</td>
+                                <td>{{ $item->jenis_keuangan == 'Pengeluaran' ? 'Rp. ' . number_format($item->jumlah_keuangan, 0, ',', '.') : 'Rp. -' }}</td>
+                                <td>Rp. {{ number_format($item->saldo, 0, ',', '.') }}</td>
+                                @if ($role == 'rw')
+                                <td>{{ $item->rt->nama_rt }}</td>
+                                @endif
+                                @if ($role == 'rt')
+                                <td>
+                                    <a href="javascript:void(0);" class="buttons hapus" onclick="confirmDelete({{ $item->id }})">
+                                        <ion-icon name="trash-outline"></ion-icon>&nbsp; Hapus
+                                    </a>
+                                    <form 
+                                        id="deleteForm-{{ $item->id }}" 
+                                        method="POST" 
+                                        action="{{ route('hapus_uang', ['id' => $item->id, 'role' => $role]) }}" 
+                                        style="display: none;"
+                                    >
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
+                                </td>
+                                @endif
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="6" style="text-align: center;">Tidak ada laporan keuangan</td>
                         </tr>
-                    @endforeach
+                    @endif
                 </tbody>
             </table>
         </section>
@@ -83,16 +103,17 @@
             var rows = document.querySelectorAll("#keuanganTable tbody tr");
 
             rows.forEach(row => {
-                if (filter === "all") {
+                if (filter === "all" || row.getAttribute("data-type") === filter || row.getAttribute("data-rt") === filter) {
                     row.style.display = "";
                 } else {
-                    if (row.getAttribute("data-type") === filter) {
-                        row.style.display = "";
-                    } else {
-                        row.style.display = "none";
-                    }
+                    row.style.display = "none";
                 }
             });
+
+            // Tambahkan teks jika tidak ada dalam pemfilteran
+            // if (document.querySelectorAll("#keuanganTable tbody tr[style='display: none;']").length === rows.length) {
+            //     document.querySelector("#keuanganTable tbody").innerHTML = "<tr><td colspan='6' style='text-align: center;'>Tidak ada laporan keuangan dalam Bulan ini</td></tr>";
+            // }
         }
 
         function confirmDelete(id) {
@@ -102,3 +123,4 @@
         }
     </script>
 @endsection
+

@@ -1,5 +1,9 @@
 @extends('templates.sidebar')
 @section('main-content')
+@php
+    use Carbon\Carbon;
+    Carbon::setLocale('id');
+@endphp
     @include('templates.headers')
     @include('templates.toast')
 
@@ -40,7 +44,7 @@
                 </div>
                 <div class="input-box">
                     <label for="tanggal_lahir" class="details">Tanggal Lahir</label>
-                    <p id="tanggal_lahir">{{ $warga->tanggal_lahir }}</p>
+                    <p id="tanggal_lahir">{{ Carbon::parse($warga->tanggal_lahir)->translatedFormat('d F Y') }}</p>
                 </div>
                 <div class="input-box">
                     <label for="alamat_ktp" class="details">Alamat KTP</label>
@@ -71,7 +75,7 @@
 
         {{-- Tombol Ganti Password --}}
         <div class="button">
-            <a href="#" class="btn"><ion-icon name="create-outline"></ion-icon> Perubahan Data</a>
+            {{-- <a href="#" class="btn"><ion-icon name="create-outline"></ion-icon> Perubahan Data</a> --}}
             <a href="{{ route('ubah_password_index', ['role' => $role]) }}" class="btn"><ion-icon name="lock-closed-outline"></ion-icon> Ganti Password</a>
         </div>
     </section>

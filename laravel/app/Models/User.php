@@ -16,7 +16,7 @@ class User extends Authenticatable
     ];
 
     protected $hidden = [
-        'password',
+        'password', // Menyembunyikan kolom password saat data pengguna diambil
         'remember_token'
     ];
 
@@ -25,13 +25,16 @@ class User extends Authenticatable
         'updated_at' => 'datetime'
     ];
     
-    public function getAuthIdentifier()
-    {
-        return $this->username;
-    }
+    // Jika kolom id yang merupakan kunci primer di tabel users, 
+    // maka tidak perlu mendefinisikan fungsi getAuthIdentifier() dan getAuthPassword()
 
-    public function getAuthPassword()
-    {
-        return $this->password;
-    }
+    // public function getAuthIdentifier()
+    // {
+    //     return $this->username;
+    // }
+
+    // public function getAuthPassword()
+    // {
+    //     return $this->password;
+    // }
 }

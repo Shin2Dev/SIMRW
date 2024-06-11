@@ -13,11 +13,20 @@ class DatabaseSeeder extends Seeder
     {
         $this -> call ([
             RtSeeder::class,
-            UserSeeder::class,
             KategoriInfoSeeder::class,
             InformasiSeeder::class,
+            KeluargaSeeder::class,
             KeuanganSeeder::class,
-            WargaSeeder::class
+            WargaSeeder::class,
+            JenisSuratSeeder::class,
+            JabatanSeeder::class,
+            AnggotaRtSeeder::class,
+            AnggotaRwSeeder::class,
+            SuratSeeder::class,
+            UserSeeder::class,
+            KriteriaBansosSeeder::class,
+            SubKriteriaBansosSeeder::class,
+            CalonPenerimaBansosSeeder::class
         ]);
     }
 }

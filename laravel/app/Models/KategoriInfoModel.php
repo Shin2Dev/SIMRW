@@ -13,6 +13,6 @@ class KategoriInfoModel extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'nama_kategori'
+        'nama_kategori_info'
     ];
 }

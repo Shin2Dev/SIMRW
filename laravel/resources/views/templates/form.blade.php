@@ -18,8 +18,14 @@
                     @yield('form-content')
                 </section>
                 <div class="button">
-                    <button type="submit">Submit</button>
-                    <a href="{{ route($pages, ['role' => $role]) }}" class="btn-back">Kembali</a>
+                    @if ($route == 'verifikasi')
+                        <button type="submit" name="status" value="Disetujui" onclick="return confirm('Apakah Anda yakin ingin surat ini disetujui?')">Verifikasi</button>
+                        <button type="submit" name="status" value="Ditolak" style="background: red" onclick="return confirm('Apakah Anda yakin ingin surat ini ditolak?')">Tolak</button>
+                        <a href="{{ route($pages, ['role' => $role]) }}" class="btn-back">Kembali</a>
+                    @else
+                        <button type="submit">Submit</button>
+                        <a href="{{ route($pages, ['role' => $role]) }}" class="btn-back">Kembali</a>
+                    @endif
                 </div>
             </form>
         </main>

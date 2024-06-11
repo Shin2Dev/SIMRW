@@ -133,13 +133,13 @@
                 <div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
                     <div class="pricing text-uppercase">
                         <div class="pricing-title">
-                            <img src="assets/imgs/info/{{ $info->gambar }}" alt="pricing img" class="pricing-image">
+                            <img src="assets/imgs/info/{{ $info->gambar_info }}" alt="pricing img" class="pricing-image">
                         </div>
                         <ul>
-                            <li><b>{{ $info->judul }}</b></li>
-                            <li>{{ $info->deskripsi}}</li>
-                            <li>Tanggal: {{ Carbon::parse($info->tanggal)->translatedFormat('d F Y') }}</li>
-                            <li>Tempat: {{ $info->tempat }}</li>
+                            <li><b>{{ $info->judul_info }}</b></li>
+                            <li>{{ $info->deskripsi_info}}</li>
+                            <li>Tanggal: {{ Carbon::parse($info->tanggal_info)->translatedFormat('d F Y') }}</li>
+                            <li>Tempat: {{ $info->tempat_info }}</li>
                         </ul>
                         <button class="btn btn-primary text-uppercase">Detail</button>
                     </div>

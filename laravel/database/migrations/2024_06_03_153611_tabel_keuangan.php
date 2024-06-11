@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('keuangan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_rt');
-            $table->date('tanggal');
-            $table->enum('jenis', ['Pemasukan', 'Pengeluaran']);
-            $table->string('deskripsi');
-            $table->decimal('jumlah', 15, 2);
-            $table->decimal('saldo', 15, 2);
+            $table->date('tanggal_keuangan');
+            $table->enum('jenis_keuangan', ['Pemasukan', 'Pengeluaran']);
+            $table->string('deskripsi_keuangan', 50);
+            $table->decimal('jumlah_keuangan', 15, 2);
+            $table->decimal('saldo', 15, 2)->nullable();
             $table->timestamps();
             
             $table->foreign('id_rt')->references('id')->on('rt');

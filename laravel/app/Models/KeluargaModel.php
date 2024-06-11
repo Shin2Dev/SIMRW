@@ -14,6 +14,16 @@ class KeluargaModel extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'nomor_kk',
+        'id_rt', 'nomor_kk', 'gambar_kk'
     ];
+
+    public function warga()
+    {
+        return $this->hasMany(WargaModel::class, 'id_keluarga', 'id');
+    }
+
+    public function kepalaKeluarga()
+    {
+        return $this->hasOne(WargaModel::class, 'id_keluarga', 'id')->where('status_keluarga', 'Kepala Keluarga');
+    }
 }

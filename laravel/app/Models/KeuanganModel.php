@@ -15,17 +15,12 @@ class KeuanganModel extends Model
 
     protected $fillable = [
         'id_rt',
-        'tanggal',
-        'deskripsi',
-        'jenis',
-        'jumlah',
+        'tanggal_keuangan',
+        'deskripsi_keuangan',
+        'jenis_keuangan',
+        'jumlah_keuangan',
         'saldo',
     ];
-
-    public function getFormattedDateAttribute()
-    {
-        return \Carbon\Carbon::parse($this->attributes['tanggal'])->format('d-m-Y');
-    }
 
     public function rt()
     {

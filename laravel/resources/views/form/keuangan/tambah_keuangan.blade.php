@@ -2,8 +2,8 @@
 
 @section('form-content')
     <div class="input-box">
-        <label for="id_rt" class="details">RT <span style="color: red;">*</span></label>
-        <input type="number" id="id_rt" name="id_rt" value="1" readonly>
+        <label for="rt" class="details">RT <span style="color: red;">*</span></label>
+        <input type="number" id="rt" name="rt" value="{{ $warga->rt->nama_rt }}" readonly>
     </div>
     <div class="input-box">
         <label for="tanggal" class="details">Tanggal</label>
@@ -27,7 +27,7 @@
     </div>
     <div class="input-box">
         <label for="saldo" class="details">Saldo</label>
-        <input type="text" id="saldo" name="saldo" value="Rp. {{ number_format($lastKeuangan->saldo, 0, ',', '.') }}" required autocomplete="off" readonly>
+        <input type="text" id="saldo" name="saldo" value="Rp. {{ number_format($saldo, 0, ',', '.') }}" required autocomplete="off" readonly>
     </div>
 
     <script>
