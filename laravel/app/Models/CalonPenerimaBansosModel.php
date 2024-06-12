@@ -38,6 +38,6 @@ class CalonPenerimaBansosModel extends Model
 
     public function rt()
     {
-        return $this->belongsTo(RtModel::class, 'id_warga', 'id');
+        return $this->belongsTo(RtModel::class, 'id_rt', 'id');
     }
 }

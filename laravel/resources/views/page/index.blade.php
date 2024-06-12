@@ -6,6 +6,20 @@
 @endphp
     @include('templates.headers')
     @include('templates.toast')
+    <style>
+        select {
+            /* width: 100%; */
+            border: none;
+            /* outline: none; */
+            padding: 0.5rem;
+            background-color: transparent;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        option {
+            font-size: 1rem;
+        }
+        </style>
 
     {{-- Judul SIRW --}}
     <header class="main-title">
@@ -92,53 +106,125 @@
             <h3>Grafik Data</h3>
         </section>
 
-        <section class="table__body3" style="display: flex; justify-content: space-between">
-            {{-- GRAFIIIIIKKKK --}}
-            <div id="chart1"></div>
-            <div id="chart2"></div>
-        </section>
-
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-        <script>
-            var options1 = {
-                series: [{
-                    data: [{{ $warga->where('id_rt', '001')->count() }}, {{ $warga->where('id_rt', '002')->count() }}, {{ $warga->where('id_rt', '003')->count() }}, {{ $warga->where('id_rt', '004')->count() }}]
-                }],
-                chart: {
-                    type: 'bar',
-                    height: 300
-                },
-                title: {
-                    text: 'Warga RT'
-                },
-                xaxis: {
-                    categories: ['RT 001', 'RT 002', 'RT 003', 'RT 004']
-                },
-                colors: ['#FF69B4', '#33CC33', '#6666FF', '#0099CC'] // changed colors to be different for each bar
-            };
-
-            var options2 = {
-                series: [{
-                    data: [{{ $warga->where('golongan_darah', 'A')->count() }}, {{ $warga->where('golongan_darah', 'B')->count() }}, {{ $warga->where('golongan_darah', 'AB')->count() }}, {{ $warga->where('golongan_darah', 'O')->count() }}]
-                }],
-                chart: {
-                    type: 'bar',
-                    height: 300
-                },
-                title: {
-                    text: 'Warga Golongan Darah'
-                },
-                xaxis: {
-                    categories: ['A', 'B', 'AB', 'O']
-                },
-                colors: ['#FF69B4', '#33CC33', '#6666FF', '#0099CC'] // changed colors to be different for each bar
-            };
-
-            var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
-            var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
-            chart1.render();
-            chart2.render();
-        </script>
+        <div style="margin: 20px;">
+            <label for="agama">Filter Agama: </label>
+            <select id="agama" onchange="updateCharts()">
+                <option value="all">All</option>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Buddha">Buddha</option>
+                <option value="Konghucu">Konghucu</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="gender">Filter Gender: </label>
+            <select id="gender" onchange="updateCharts()">
+                <option value="all">All</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
+        </div>
+            
+            <section class="table__body3" style="display: flex; justify-content: space-between">
+                <div id="chart1"></div>
+                <div id="chart2"></div>
+            </section>
+            
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+            <script>
+                // Contoh data awal
+                var wargaData = @json($data_warga); // Ambil data warga dari controller atau database
+            
+                function filterDataByCriteria(agama, gender) {
+                    let filteredData = wargaData;
+                    
+                    if (agama !== 'all') {
+                        filteredData = filteredData.filter(warga => warga.agama === agama);
+                    }
+            
+                    if (gender !== 'all') {
+                        filteredData = filteredData.filter(warga => warga.jenis_kelamin === gender);
+                    }
+            
+                    return filteredData;
+                }
+            
+                function getDataForCharts(filteredData) {
+                    return {
+                        rtCounts: [
+                            filteredData.filter(warga => warga.id_rt == '1').length,
+                            filteredData.filter(warga => warga.id_rt == '2').length,
+                            filteredData.filter(warga => warga.id_rt == '3').length,
+                            filteredData.filter(warga => warga.id_rt == '4').length
+                        ],
+                        golonganDarahCounts: [
+                            filteredData.filter(warga => warga.golongan_darah === 'A').length,
+                            filteredData.filter(warga => warga.golongan_darah === 'B').length,
+                            filteredData.filter(warga => warga.golongan_darah === 'AB').length,
+                            filteredData.filter(warga => warga.golongan_darah === 'O').length
+                        ]
+                    };
+                }
+            
+                function updateCharts() {
+                    var selectedAgama = document.getElementById('agama').value;
+                    var selectedGender = document.getElementById('gender').value;
+                    // var selectedGender = document.querySelector('option:checked').parentElement.getAttribute('id') === 'agama' ? 'all' : document.getElementById('agama').value;
+            
+                    var filteredData = filterDataByCriteria(selectedAgama, selectedGender);
+                    var chartData = getDataForCharts(filteredData);
+            
+                    chart1.updateSeries([{
+                        data: chartData.rtCounts
+                    }]);
+            
+                    chart2.updateSeries([{
+                        data: chartData.golonganDarahCounts
+                    }]);
+                }
+            
+                var initialData = getDataForCharts(wargaData);
+            
+                var options1 = {
+                    series: [{
+                        data: initialData.rtCounts
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: 300
+                    },
+                    title: {
+                        text: 'Warga RT'
+                    },
+                    xaxis: {
+                        categories: ['RT 001', 'RT 002', 'RT 003', 'RT 004']
+                    },
+                    colors: ['#FF69B4', '#33CC33', '#6666FF', '#0099CC']
+                };
+            
+                var options2 = {
+                    series: [{
+                        data: initialData.golonganDarahCounts
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: 300
+                    },
+                    title: {
+                        text: 'Warga Golongan Darah'
+                    },
+                    xaxis: {
+                        categories: ['A', 'B', 'AB', 'O']
+                    },
+                    colors: ['#FF69B4', '#33CC33', '#6666FF', '#0099CC']
+                };
+            
+                var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
+                var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+            
+                chart1.render();
+                chart2.render();
+            </script>            
     </main>
 
     @include('templates.info-popup')

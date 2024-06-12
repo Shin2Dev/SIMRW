@@ -24,6 +24,7 @@
                 <th>Nama</th>
                 <th>Pendidikan</th>
                 <th>Usia</th>
+                <th>RT</th>
             </tr>
         </thead>
         <tbody id="table-data">
@@ -34,6 +35,7 @@
                         <td>{{ $calon->warga->nama }}</td>
                         <td>{{ $calon->pendidikan }}</td>
                         <td>{{ $calon->usia }}</td>
+                        <td>{{ $calon->rt->nama_rt }}</td>
                     </tr>
                 @endforeach
             @else
