@@ -135,13 +135,13 @@
                         <div class="pricing-title">
                             <img src="assets/imgs/info/{{ $info->gambar_info }}" alt="pricing img" class="pricing-image">
                         </div>
-                        <ul>
+                        <ul style="padding-bottom: 50px;">
                             <li><b>{{ $info->judul_info }}</b></li>
                             <li>{{ $info->deskripsi_info}}</li>
                             <li>Tanggal: {{ Carbon::parse($info->tanggal_info)->translatedFormat('d F Y') }}</li>
                             <li>Tempat: {{ $info->tempat_info }}</li>
                         </ul>
-                        <button class="btn btn-primary text-uppercase">Detail</button>
+                        {{-- <button class="btn btn-primary text-uppercase">Detail</button> --}}
                     </div>
                 </div>
                 @endforeach
