@@ -42,6 +42,9 @@
                         @endif
                         <th>Jenis Surat</th>
                         <th>Status</th>
+                        @if ($role == 'rw')
+                        <th>RT</th>
+                        @endif
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -56,6 +59,9 @@
                             @endif
                             <td>{{ $surat->jenis_surat->nama_jenis_surat }}</td>
                             <td>{{ $surat->status_surat }}</td>
+                            @if ($role == 'rw')
+                            <td>{{ $surat->rt->nama_rt }}</td>
+                            @endif
                             <td>
                                 <div class="aksi">
                                     @if ($role == 'warga')

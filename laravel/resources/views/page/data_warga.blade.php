@@ -29,6 +29,9 @@
                         <th>Jenis Kelamin</th>
                         <th>Pekerjaan</th>
                         <th>Status Warga</th>
+                        @if ($role == 'rw')
+                        <th>RT</th>
+                        @endif
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -41,6 +44,9 @@
                             <td>{{ $warga->jenis_kelamin }}</td>
                             <td>{{ $warga->pekerjaan }}</td>
                             <td>{{ $warga->status_warga }}</td>
+                            @if ($role == 'rw')
+                            <td>{{ $warga->rt->nama_rt }}</td>
+                            @endif
                             <td>
                                 <a href="{{ route('detail_warga', ['role' => $role, 'id' => $warga->id]) }}" class="btn-detail">
                                     <ion-icon name="eye-outline"></ion-icon>&nbsp; Detail Data

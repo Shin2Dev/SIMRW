@@ -22,14 +22,14 @@
                 @endif
                 
                 {{-- FILTER DATA --}}
-                <div class="input-group">
+                {{-- <div class="input-group">
                     <select id="filter" onchange="filterData()">
                         <option value="all">Semua Kategori</option>
                         @foreach ($kategoriInfos as $kategoriInfo)
                             <option value="{{ $kategoriInfo->nama_kategori }}">{{ $kategoriInfo->nama_kategori_info }}</option>
                         @endforeach
                     </select>
-                </div>
+                </div> --}}
             </section>
 
             <section class="cards">
@@ -95,22 +95,22 @@
             </div>
 
             <script>
-                function filterData() {
-                    var filter = document.getElementById("filter").value;
-                    var rows = document.querySelectorAll(".cardinfo");
+                // function filterData() {
+                //     var filter = document.getElementById("filter").value;
+                //     var rows = document.querySelectorAll(".cardinfo");
 
-                    rows.forEach(row => {
-                        if (filter === "all") {
-                            row.style.display = "";
-                        } else {
-                            if (row.getAttribute("data-type") === filter) {
-                                row.style.display = "";
-                            } else {
-                                row.style.display = "none";
-                            }
-                        }
-                    });
-                }
+                //     rows.forEach(row => {
+                //         if (filter === "all") {
+                //             row.style.display = "";
+                //         } else {
+                //             if (row.getAttribute("data-type") === filter) {
+                //                 row.style.display = "";
+                //             } else {
+                //                 row.style.display = "none";
+                //             }
+                //         }
+                //     });
+                // }
 
                 function confirmDelete(id) {
                     if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {

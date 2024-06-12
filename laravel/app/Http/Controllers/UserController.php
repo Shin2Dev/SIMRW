@@ -23,12 +23,13 @@ class UserController extends Controller
     }
 
     public function ubah_password($role, Request $request){
+        $users = Auth::user();
         $request->validate([
             'password_lama' => 'required',
             'password_baru' => 'required',
         ]);
 
-        $user = User::where('username', Auth::id())->first();
+        $user = User::where('username', $users->username)->first();
 
         if (!Hash::check($request->password_lama, $user->password)) {
             return back()->with('error', 'Password lama tidak sesuai');

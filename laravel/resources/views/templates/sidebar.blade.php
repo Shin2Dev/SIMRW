@@ -53,14 +53,14 @@
                         <span class="title">Data Warga</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('data_keluarga', ['role' => $role]) }}">
                         <span class="icon">
                             <ion-icon name="people-circle-outline"></ion-icon>
                         </span>
                         <span class="title">Data Keluarga</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{ route('data_rt', ['role' => $role]) }}">
                         <span class="icon">
@@ -88,14 +88,14 @@
                         <span class="title">Data Warga</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('data_keluarga', ['role' => $role]) }}">
                         <span class="icon">
                             <ion-icon name="people-circle-outline"></ion-icon>
                         </span>
                         <span class="title">Data Keluarga</span>
                     </a>
-                </li>
+                </li> --}}
                 @endif
             @endif
 

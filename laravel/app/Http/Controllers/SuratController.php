@@ -74,10 +74,23 @@ class SuratController extends Controller
 
     public function verifikasi($role, $id, Request $request){
         $surat = SuratModel::find($id);
+        $i = SuratModel::where('id_rt', $surat->rt->id)->max('id') + 1;
+        $id_rt = $surat->rt->id;
         if($surat){
             if($request->input('status') == 'Disetujui'){
                 $surat->status_surat = 'Disetujui';
-                $surat->nomor_surat = 'RT' . $surat->rt->nama_rt . '/' . str_pad($surat->id, 3, '0', STR_PAD_LEFT) . '/' . date('m/Y');
+                $surat->nomor_surat = 'RT' . $surat->rt->nama_rt . '/' . str_pad($i, 3, '0', STR_PAD_LEFT) . '/' . date('m/Y');
+
+                if ($id_rt == 1){
+                    $surat->id_anggota_rt = 1;
+                } else if ($id_rt == 2){
+                    $surat->id_anggota_rt = 3;
+                } else if ($id_rt == 3){
+                    $surat->id_anggota_rt = 4;
+                } else {
+                    $surat->id_anggota_rt = 5;
+                }
+
             } elseif($request->input('status') == 'Ditolak'){
                 $surat->status_surat = 'Ditolak';
             }
@@ -91,7 +104,7 @@ class SuratController extends Controller
             return redirect()->route('surat', ['role' => $role])->with('error', 'Surat tidak ditemukan');
         }
     }
-
+    
     public function cetak_surat($role, $id){
         $surat = SuratModel::find($id);
         return view('surat.surat_keterangan', [

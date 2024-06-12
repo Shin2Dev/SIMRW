@@ -34,8 +34,7 @@
                 <button class="login" type="submit">Login</button>
             </form>
 
-            {{-- <form action="{{ route('forgot-password') }}" method="POST"> --}}
-            <form method="POST" action="{{ route('forgot_password') }}" class="forgot-password-form" style="display: none;">
+            {{-- <form method="POST" action="{{ route('forgot_password') }}" class="forgot-password-form" style="display: none;">
                 @csrf
 
                 <div class="form-group">
@@ -47,22 +46,22 @@
                 </div>
 
                 <button class="login" type="submit">Verifikasi NIK</button>
-            </form>
+            </form> --}}
 
-            <div class="forgot-password">
+            {{-- <div class="forgot-password">
                 <a href="javascript:void(0);">Lupa Password?</a>
-            </div>
+            </div> --}}
 
-            <div class="login-button back-to-home" style="display: none">
+            {{-- <div class="login-button back-to-home" style="display: none">
                 <a href="javascript:void(0);">Login</a>
-            </div>
+            </div> --}}
 
             <div class="back-to-home">
                 <a href="{{ route('landing') }}">Kembali ke Halaman Utama</a>
             </div>
         </main>
 
-        <script>
+        {{-- <script>
             document.querySelector('.forgot-password a').addEventListener('click', function(event) {
                 event.preventDefault();
                 document.querySelector('.forgot-password-form').style.display = 'block';
@@ -78,6 +77,6 @@
                 document.querySelector('.login-form').style.display = 'block'
                 document.querySelector('.login-button').style.display = 'none'
             });
-        </script>
+        </script> --}}
     </div>
 @endsection

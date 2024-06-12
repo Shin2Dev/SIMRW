@@ -15,10 +15,10 @@
                 <div></div>
             {{-- @endif --}}
 
-            <div class="input-group">
+            {{-- <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <img src="assets/imgs/search.png" alt="Search Icon">
-            </div>
+            </div> --}}
         </section>
         <section class="table__body">
             <table>
@@ -28,7 +28,7 @@
                         <th>Nama Lengkap</th>
                         <th>Jabatan</th>
                         <th>Periode</th>
-                        <th>Aksi</th>
+                        {{-- <th>Aksi</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -38,17 +38,17 @@
                         <td>{{ $rw->warga->nama }}</td>
                         <td>{{ $rw->jabatan->nama_jabatan }}</td>
                         <td>{{ $rw->periode }}</td>
-                        <td>
-                            <a href="{{ route('detail_warga', ['role' => $role, 'id' => $rw->id]) }}" class="btn-detail">
+                        {{-- <td> --}}
+                            {{-- <a href="{{ route('detail_warga', ['role' => $role, 'id' => $rw->id]) }}" class="btn-detail">
                                 <ion-icon name="eye-outline"></ion-icon>&nbsp; Detail Data
-                            </a>
-                            <a href="{{ route('edit_warga', ['role' => $role, 'id' => $rw->id]) }}" class="btn-edit">
+                            </a> --}}
+                            {{-- <a href="{{ route('edit_warga', ['role' => $role, 'id' => $rw->id]) }}" class="btn-edit">
                                 <ion-icon name="create-outline"></ion-icon>&nbsp; Edit Data
-                            </a>
+                            </a> --}}
                                 {{-- <a href="{{ route('ganti_status_warga', ['role' => $role, 'id' => $warga->id]) }}" class="btn-ganti">
                                     <ion-icon name="swap-horizontal-outline"></ion-icon>&nbsp; Ganti Status
                                 </a> --}}
-                        </td>
+                        {{-- </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
