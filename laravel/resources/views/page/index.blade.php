@@ -19,6 +19,17 @@
         option {
             font-size: 1rem;
         }
+
+        @media (max-width: 768px) {
+            .table__body3 {
+                flex-direction: column
+            }
+
+            .filtering {
+                display: flex;
+                flex-direction: column;
+            }
+        }
         </style>
 
     {{-- Judul SIRW --}}
@@ -106,7 +117,7 @@
             <h3>Grafik Data</h3>
         </section>
 
-        <div style="margin: 20px;">
+        <div style="margin: 20px;" class="filtering">
             <label for="agama">Filter Agama: </label>
             <select id="agama" onchange="updateCharts()">
                 <option value="all">All</option>
@@ -191,7 +202,25 @@
                     }],
                     chart: {
                         type: 'bar',
-                        height: 300
+                        height: 300,
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                options: {
+                                    chart: {
+                                        width: 300
+                                    }
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                options: {
+                                    chart: {
+                                        width: 200
+                                    }
+                                }
+                            }
+                        ]
                     },
                     title: {
                         text: 'Warga RT'
@@ -208,7 +237,25 @@
                     }],
                     chart: {
                         type: 'bar',
-                        height: 300
+                        height: 300,
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                options: {
+                                    chart: {
+                                        width: 300
+                                    }
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                options: {
+                                    chart: {
+                                        width: 200
+                                    }
+                                }
+                            }
+                        ]
                     },
                     title: {
                         text: 'Warga Golongan Darah'

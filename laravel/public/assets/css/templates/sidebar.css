@@ -2,16 +2,18 @@
 .navigation {
     position: fixed;
     width: 300px;
-    height: 100%;
+    height: 100vh; /* changed from 100% to 100vh for responsive height */
     background: var(--blue);
     transition: 0.5s;
     overflow-x: hidden;
     z-index: 1000;
+    overflow-y: auto; /* added for vertical scrolling */
+    top: 0;
+    left: 0;
 }
 
 .navigation.active {
     width: 60px;
-    overflow: hidden;
 }
   
 .navigation ul {
@@ -83,7 +85,7 @@
     position: absolute;
     width: calc(100% - 300px);
     left: 300px;
-    min-height: 100vh;
+    min-height: 100vh; /* changed from 100% to 100vh for responsive height */
     background: var(--white);
     transition: 0.5s;
 }
@@ -114,13 +116,11 @@
     .navigation {
         width: 80px;
         left: -80px;
-        /* overflow-x: hidden; */
     }
 
     .navigation.active {
         width: 300px;
         left: 0;
-        /* overflow: hidden; */
     }
 
     .main {
