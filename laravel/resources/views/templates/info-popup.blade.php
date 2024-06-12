@@ -41,8 +41,8 @@
 
                     $.ajax({
                         type: 'GET',
-                        // url: `/SIMRW/laravel/public/${role}/tampil_info/${id}`,
-			url: `http://klp7.dhanifudin.com/${role}/tampil_info/${id}`
+                        url: `/SIMRW/laravel/public/${role}/tampil_info/${id}`,
+			            // url: `http://klp7.dhanifudin.com/${role}/tampil_info/${id}`
                         dataType: 'json',
                         success: function(info) {
                             document.getElementById('info-judul').innerText = info.judul_info;

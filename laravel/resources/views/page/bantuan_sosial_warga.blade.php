@@ -1,13 +1,18 @@
 <section class="table__header">
     <div>
-        @foreach($calon_penerima_bansos as $calon)
-            @if ($calon->penerima_bansos)
-                <h3>Selamat, anda berhak mendapatkan bansos</h3>
-                @break
-            @else
-                <h3>Mohon maaf, anda tidak berhak mendapatkan bansos</h3>
-            @endif
-        @endforeach
+        @if(count($calon_penerima_bansos->where('penerima_bansos', true)) > 0)
+            @foreach($calon_penerima_bansos as $calon)
+                @if ($calon->penerima_bansos)
+                    <h3>Selamat, anda berhak mendapatkan bansos</h3>
+                    @break
+                @else
+                    <h3>Mohon maaf, anda tidak berhak mendapatkan bansos</h3>
+                    @break
+                @endif
+            @endforeach
+        @else
+            <h3>Tidak ada data penerima data bansos</h3>
+        @endif
     </div>
 </section>
 <section class="table__body" id="table-body">
